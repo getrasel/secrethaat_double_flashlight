@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiShoppingBag, FiCheckCircle, FiGift, FiAward, FiStar } from 'react-icons/fi';
+import { FiShoppingBag, FiCheckCircle, FiGift, FiStar } from 'react-icons/fi';
 import { RiMotorbikeFill } from 'react-icons/ri';
 import shapeSpiral from '../assets/images/shape/1.png';
 import shapeSparkle from '../assets/images/shape/2.png';
