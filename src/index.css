@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --font-bangla: 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-latin: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --bg-main: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+
+  --primary-blue: #0068FF;
+  --primary-blue-dark: #0052CC;
+  --primary-blue-light: #EBF3FF;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-bangla);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section,
+footer,
+header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive Containers */
+.container-custom {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container-narrow {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bangla);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.font-latin {
+  font-family: var(--font-latin);
+}
+
+.font-bangla {
+  font-family: var(--font-bangla);
+}
+
+/* Blue Gradients & Healis Shadows (Matched with 'গরমে পান স্বস্তি!' gradient) */
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #0A58CA 0%, #0068FF 35%, #0284C7 70%, #06B6D4 100%);
+}
+
+.bg-gradient-blue-hover:hover {
+  background: linear-gradient(135deg, #0849AA 0%, #0056D6 35%, #0274B0 70%, #05A0BB 100%);
+}
+
+.bg-gradient-blue-subtle {
+  background: linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%);
+}
+
+.healis-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 104, 255, 0.08), 0 2px 8px -1px rgba(0, 0, 0, 0.03);
+}
+
+.healis-shadow-lg {
+  box-shadow: 0 16px 36px -4px rgba(0, 104, 255, 0.14), 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+}
+
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 104, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
