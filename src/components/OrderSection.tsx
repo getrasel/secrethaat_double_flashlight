@@ -39,8 +39,9 @@ export const OrderSection: React.FC = () => {
 
   // Dynamic Calculations
   const unitPrice = PRODUCT_INFO.basePrice;
+  const regularUnitPrice = PRODUCT_INFO.regularPrice;
+  const regularTotal = regularUnitPrice * quantity;
   const itemsTotal = unitPrice * quantity;
-  const regularTotal = PRODUCT_INFO.regularPrice * quantity;
   const deliveryCharge = deliveryArea === 'dhaka' ? PRODUCT_INFO.deliveryDhaka : PRODUCT_INFO.deliveryOutside;
   const grandTotal = itemsTotal + deliveryCharge;
 
@@ -110,7 +111,7 @@ export const OrderSection: React.FC = () => {
 
   return (
     <section id="order-section" className="relative overflow-hidden py-16 md:py-24 bg-white border-y border-slate-100">
-      
+
       {/* Decorative Background Shapes */}
       <div className="hidden sm:block absolute top-10 -right-12 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-55 z-0">
         <img
@@ -146,7 +147,7 @@ export const OrderSection: React.FC = () => {
           <div className="lg:col-span-6 space-y-6">
 
             {/* Color Swatch Card */}
-            <div className="bg-slate-50/70 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5">
+            <div className="bg-slate-50/70 rounded-3xl p-5 sm:p-6 pb-4 sm:pb-5 border border-slate-200 shadow-xs space-y-4">
 
               <div className="flex items-center justify-between">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">
@@ -166,12 +167,12 @@ export const OrderSection: React.FC = () => {
                       key={variant.id}
                       type="button"
                       onClick={() => setSelectedColor(variant.id)}
-                      className={`relative flex flex-col items-center p-4 rounded-2xl border-2 transition-all cursor-pointer bg-white ${isSelected
+                      className={`relative flex flex-col items-center p-3.5 sm:p-4 rounded-2xl border-2 transition-all cursor-pointer bg-white ${isSelected
                         ? 'border-[#0068FF] ring-3 ring-[#0068FF]/20 shadow-md scale-101'
                         : 'border-slate-200/90 hover:border-slate-300'
                         }`}
                     >
-                      <div className="w-20 h-20 rounded-xl overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+                      <div className="w-20 h-20 rounded-xl overflow-hidden mb-2.5 bg-slate-100 border border-slate-100">
                         <img
                           src={variant.image}
                           alt={variant.name}
@@ -199,25 +200,25 @@ export const OrderSection: React.FC = () => {
                 })}
               </div>
 
-              {/* Quantity Selector */}
-              <div className="pt-5 border-t border-slate-200 flex items-center justify-between">
+              {/* Quantity Selector - Reduced bottom padding */}
+              <div className="pt-3.5 border-t border-slate-200 flex items-center justify-between">
                 <div>
                   <h4 className="text-base font-bold text-slate-900">২. পরিমাণ (Quantity)</h4>
                   <p className="text-xs sm:text-sm text-slate-500">কত পিস নিতে চান?</p>
                 </div>
 
-                <div className="flex items-center bg-white border border-slate-300 rounded-2xl p-1.5 shadow-2xs">
+                <div className="flex items-center bg-white border border-slate-300 rounded-2xl p-1 shadow-2xs">
                   <button
                     type="button"
                     onClick={() => handleQuantityChange(-1)}
                     disabled={quantity <= 1}
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors cursor-pointer"
                     aria-label="পরিমাণ কমান"
                   >
-                    <FiMinus className="w-5 h-5" />
+                    <FiMinus className="w-4.5 h-4.5" />
                   </button>
 
-                  <span className="w-14 text-center font-latin font-bold text-lg text-slate-900">
+                  <span className="w-12 text-center font-latin font-bold text-base sm:text-lg text-slate-900">
                     {toBanglaNumber(quantity)}
                   </span>
 
@@ -225,30 +226,30 @@ export const OrderSection: React.FC = () => {
                     type="button"
                     onClick={() => handleQuantityChange(1)}
                     disabled={quantity >= 10}
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors cursor-pointer"
                     aria-label="পরিমাণ বাড়ান"
                   >
-                    <FiPlus className="w-5 h-5" />
+                    <FiPlus className="w-4.5 h-4.5" />
                   </button>
                 </div>
               </div>
 
             </div>
 
-            {/* Dynamic Price Breakdown Box with Integrated Delivery Area Selection */}
-            <div className="bg-[linear-gradient(135deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] text-white rounded-3xl p-6 sm:p-8 healis-shadow-lg space-y-5 border border-white/20">
-              <div className="flex items-center justify-between border-b border-white/25 pb-3">
+            {/* Dynamic Price Breakdown Box - Reduced bottom padding & Market price removed */}
+            <div className="bg-[linear-gradient(135deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] text-white rounded-3xl p-5 sm:px-7 sm:pt-5 sm:pb-4.5 healis-shadow-lg space-y-3.5 border border-white/20">
+              <div className="flex items-center justify-between border-b border-white/25 pb-2.5">
                 <h3 style={{ color: '#FFFFFF' }} className="text-base sm:text-lg font-extrabold text-white tracking-wide flex items-center gap-2">
                   <FiShoppingBag className="w-5 h-5 text-blue-200" />
                   মূল্য ও অর্ডার সামারি
                 </h3>
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/15 text-white border border-white/20">
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/15 text-white border border-white/20">
                   ক্যাশ অন ডেলিভারি
                 </span>
               </div>
 
               {/* Delivery Area Selection inside Summary Card */}
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <label className="block text-sm sm:text-base font-bold text-white flex items-center gap-1.5">
                     <FiTruck className="w-4.5 h-4.5 text-cyan-200" />
@@ -260,25 +261,23 @@ export const OrderSection: React.FC = () => {
                 </div>
 
                 {/* 2 Selectable Options */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+
                   {/* Option 1: Dhaka */}
                   <button
                     type="button"
                     onClick={() => setDeliveryArea('dhaka')}
-                    className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${
-                      deliveryArea === 'dhaka'
+                    className={`text-left p-3 sm:p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${deliveryArea === 'dhaka'
                         ? 'bg-white text-slate-900 border-white shadow-md ring-3 ring-white/50 scale-[1.01]'
                         : 'bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-xs'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-2.5">
                       <div
-                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
-                          deliveryArea === 'dhaka'
+                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${deliveryArea === 'dhaka'
                             ? 'border-[#0068FF] bg-[#0068FF] text-white'
                             : 'border-white/70 bg-white/15'
-                        }`}
+                          }`}
                       >
                         {deliveryArea === 'dhaka' && <FiCheck className="w-3.5 h-3.5 stroke-[3]" />}
                       </div>
@@ -293,11 +292,10 @@ export const OrderSection: React.FC = () => {
                     </div>
 
                     <span
-                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${
-                        deliveryArea === 'dhaka'
+                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${deliveryArea === 'dhaka'
                           ? 'bg-blue-50 text-[#0068FF] border border-blue-100'
                           : 'bg-white/20 text-white border border-white/20'
-                      }`}
+                        }`}
                     >
                       ৳{toBanglaNumber(PRODUCT_INFO.deliveryDhaka)}
                     </span>
@@ -307,19 +305,17 @@ export const OrderSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setDeliveryArea('outside')}
-                    className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${
-                      deliveryArea === 'outside'
+                    className={`text-left p-3 sm:p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${deliveryArea === 'outside'
                         ? 'bg-white text-slate-900 border-white shadow-md ring-3 ring-white/50 scale-[1.01]'
                         : 'bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-xs'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-2.5">
                       <div
-                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
-                          deliveryArea === 'outside'
+                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${deliveryArea === 'outside'
                             ? 'border-[#0068FF] bg-[#0068FF] text-white'
                             : 'border-white/70 bg-white/15'
-                        }`}
+                          }`}
                       >
                         {deliveryArea === 'outside' && <FiCheck className="w-3.5 h-3.5 stroke-[3]" />}
                       </div>
@@ -334,11 +330,10 @@ export const OrderSection: React.FC = () => {
                     </div>
 
                     <span
-                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${
-                        deliveryArea === 'outside'
+                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${deliveryArea === 'outside'
                           ? 'bg-blue-50 text-[#0068FF] border border-blue-100'
                           : 'bg-white/20 text-white border border-white/20'
-                      }`}
+                        }`}
                     >
                       ৳{toBanglaNumber(PRODUCT_INFO.deliveryOutside)}
                     </span>
@@ -347,16 +342,18 @@ export const OrderSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Price Calculation Lines */}
-              <div className="space-y-2.5 text-base pt-3 border-t border-white/25">
-                <div className="flex justify-between text-blue-100 text-sm sm:text-base">
-                  <span>নিয়মিত বাজার মূল্য</span>
-                  <span className="text-blue-200 line-through">৳{toBanglaNumber(regularTotal)}</span>
-                </div>
-
-                <div className="flex justify-between text-white font-medium text-sm sm:text-base">
-                  <span>অফার মূল্য ({toBanglaNumber(quantity)} পিস)</span>
-                  <span className="font-bold">৳{toBanglaNumber(itemsTotal)}</span>
+              {/* Price Calculation Lines - Regular Cut Price & Offer Price */}
+              <div className="space-y-2 text-base pt-2.5 border-t border-white/25">
+                <div className="flex justify-between items-center text-white font-medium text-sm sm:text-base">
+                  <span>পণ্যের অফার মূল্য ({toBanglaNumber(quantity)} পিস)</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs sm:text-sm text-blue-200 line-through opacity-85">
+                      ৳{toBanglaNumber(regularTotal)}
+                    </span>
+                    <span className="font-bold text-white text-base sm:text-lg">
+                      ৳{toBanglaNumber(itemsTotal)}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex justify-between text-blue-100 text-sm sm:text-base">
@@ -366,9 +363,9 @@ export const OrderSection: React.FC = () => {
                   <span className="font-bold text-white">৳{toBanglaNumber(deliveryCharge)}</span>
                 </div>
 
-                <div className="pt-3 border-t border-white/25 flex justify-between items-center text-lg sm:text-xl">
-                  <span className="font-extrabold text-white">সর্বমোট প্রদেয় মূল্য</span>
-                  <span className="font-extrabold text-3xl text-white">
+                <div className="pt-2 border-t border-white/25 flex justify-between items-center text-lg sm:text-xl">
+                  <span className="font-extrabold text-white">সর্বমোট মূল্য</span>
+                  <span className="font-extrabold text-2xl sm:text-3xl text-white leading-none">
                     ৳{toBanglaNumber(grandTotal)}
                   </span>
                 </div>
@@ -377,8 +374,8 @@ export const OrderSection: React.FC = () => {
 
           </div>
 
-          {/* RIGHT COLUMN: Bangla Checkout Order Form */}
-          <div className="lg:col-span-6">
+          {/* RIGHT COLUMN: Bangla Checkout Order Form & Trust Guarantee */}
+          <div className="lg:col-span-6 space-y-6">
             <div className="bg-slate-50/70 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
 
               <div className="mb-6 pb-4 border-b border-slate-200">
@@ -484,6 +481,7 @@ export const OrderSection: React.FC = () => {
               </form>
 
             </div>
+
           </div>
 
         </div>
