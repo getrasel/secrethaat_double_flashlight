@@ -6,7 +6,9 @@ import {
   FiMinus,
   FiCheck,
   FiAlertCircle,
-  FiX
+  FiX,
+  FiTruck,
+  FiMapPin
 } from 'react-icons/fi';
 import {
   PRODUCT_INFO,
@@ -148,7 +150,7 @@ export const OrderSection: React.FC = () => {
 
               <div className="flex items-center justify-between">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-                  রঙ নির্বাচন করুন
+                  ১. রঙ নির্বাচন করুন
                 </h3>
                 <span className="text-xs sm:text-sm font-bold px-3 py-1 rounded-xl bg-white border border-slate-200 text-[#0068FF]">
                   নির্বাচিত: {currentColor.name}
@@ -200,7 +202,7 @@ export const OrderSection: React.FC = () => {
               {/* Quantity Selector */}
               <div className="pt-5 border-t border-slate-200 flex items-center justify-between">
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">পরিমাণ (Quantity)</h4>
+                  <h4 className="text-base font-bold text-slate-900">২. পরিমাণ (Quantity)</h4>
                   <p className="text-xs sm:text-sm text-slate-500">কত পিস নিতে চান?</p>
                 </div>
 
@@ -233,31 +235,138 @@ export const OrderSection: React.FC = () => {
 
             </div>
 
-            {/* Dynamic Price Breakdown Box (Sapphire-Cyan Gradient & Pure White Text) */}
-            <div className="bg-[linear-gradient(135deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] text-white rounded-3xl p-6 sm:p-8 healis-shadow-lg space-y-4 border border-white/20">
-              <h3 style={{ color: '#FFFFFF' }} className="text-base sm:text-lg font-extrabold text-white tracking-wide border-b border-white/25 pb-3">
-                মূল্য ও অর্ডার সামারি
-              </h3>
+            {/* Dynamic Price Breakdown Box with Integrated Delivery Area Selection */}
+            <div className="bg-[linear-gradient(135deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] text-white rounded-3xl p-6 sm:p-8 healis-shadow-lg space-y-5 border border-white/20">
+              <div className="flex items-center justify-between border-b border-white/25 pb-3">
+                <h3 style={{ color: '#FFFFFF' }} className="text-base sm:text-lg font-extrabold text-white tracking-wide flex items-center gap-2">
+                  <FiShoppingBag className="w-5 h-5 text-blue-200" />
+                  মূল্য ও অর্ডার সামারি
+                </h3>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/15 text-white border border-white/20">
+                  ক্যাশ অন ডেলিভারি
+                </span>
+              </div>
 
-              <div className="space-y-3 text-base">
-                <div className="flex justify-between text-blue-100">
+              {/* Delivery Area Selection inside Summary Card */}
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <label className="block text-sm sm:text-base font-bold text-white flex items-center gap-1.5">
+                    <FiTruck className="w-4.5 h-4.5 text-cyan-200" />
+                    <span>ডেলিভারি এলাকা নির্বাচন করুন <span className="text-rose-300 font-bold">*</span></span>
+                  </label>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-white/20 text-white">
+                    {deliveryArea === 'dhaka' ? 'ঢাকা শহর' : 'ঢাকার বাইরে'}
+                  </span>
+                </div>
+
+                {/* 2 Selectable Options */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  
+                  {/* Option 1: Dhaka */}
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryArea('dhaka')}
+                    className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${
+                      deliveryArea === 'dhaka'
+                        ? 'bg-white text-slate-900 border-white shadow-md ring-3 ring-white/50 scale-[1.01]'
+                        : 'bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-xs'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div
+                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
+                          deliveryArea === 'dhaka'
+                            ? 'border-[#0068FF] bg-[#0068FF] text-white'
+                            : 'border-white/70 bg-white/15'
+                        }`}
+                      >
+                        {deliveryArea === 'dhaka' && <FiCheck className="w-3.5 h-3.5 stroke-[3]" />}
+                      </div>
+                      <div>
+                        <p className={`text-sm sm:text-base font-bold leading-tight ${deliveryArea === 'dhaka' ? 'text-slate-900' : 'text-white'}`}>
+                          ঢাকা শহর
+                        </p>
+                        <p className={`text-xs ${deliveryArea === 'dhaka' ? 'text-slate-500' : 'text-blue-100'}`}>
+                          ২৪-৪৮ ঘণ্টার মধ্যে
+                        </p>
+                      </div>
+                    </div>
+
+                    <span
+                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${
+                        deliveryArea === 'dhaka'
+                          ? 'bg-blue-50 text-[#0068FF] border border-blue-100'
+                          : 'bg-white/20 text-white border border-white/20'
+                      }`}
+                    >
+                      ৳{toBanglaNumber(PRODUCT_INFO.deliveryDhaka)}
+                    </span>
+                  </button>
+
+                  {/* Option 2: Outside Dhaka */}
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryArea('outside')}
+                    className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer relative flex items-center justify-between ${
+                      deliveryArea === 'outside'
+                        ? 'bg-white text-slate-900 border-white shadow-md ring-3 ring-white/50 scale-[1.01]'
+                        : 'bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-xs'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div
+                        className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
+                          deliveryArea === 'outside'
+                            ? 'border-[#0068FF] bg-[#0068FF] text-white'
+                            : 'border-white/70 bg-white/15'
+                        }`}
+                      >
+                        {deliveryArea === 'outside' && <FiCheck className="w-3.5 h-3.5 stroke-[3]" />}
+                      </div>
+                      <div>
+                        <p className={`text-sm sm:text-base font-bold leading-tight ${deliveryArea === 'outside' ? 'text-slate-900' : 'text-white'}`}>
+                          ঢাকার বাইরে
+                        </p>
+                        <p className={`text-xs ${deliveryArea === 'outside' ? 'text-slate-500' : 'text-blue-100'}`}>
+                          সারা বাংলাদেশে
+                        </p>
+                      </div>
+                    </div>
+
+                    <span
+                      className={`text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0 ${
+                        deliveryArea === 'outside'
+                          ? 'bg-blue-50 text-[#0068FF] border border-blue-100'
+                          : 'bg-white/20 text-white border border-white/20'
+                      }`}
+                    >
+                      ৳{toBanglaNumber(PRODUCT_INFO.deliveryOutside)}
+                    </span>
+                  </button>
+
+                </div>
+              </div>
+
+              {/* Price Calculation Lines */}
+              <div className="space-y-2.5 text-base pt-3 border-t border-white/25">
+                <div className="flex justify-between text-blue-100 text-sm sm:text-base">
                   <span>নিয়মিত বাজার মূল্য</span>
                   <span className="text-blue-200 line-through">৳{toBanglaNumber(regularTotal)}</span>
                 </div>
 
-                <div className="flex justify-between text-white font-medium">
+                <div className="flex justify-between text-white font-medium text-sm sm:text-base">
                   <span>অফার মূল্য ({toBanglaNumber(quantity)} পিস)</span>
                   <span className="font-bold">৳{toBanglaNumber(itemsTotal)}</span>
                 </div>
 
-                <div className="flex justify-between text-blue-100">
+                <div className="flex justify-between text-blue-100 text-sm sm:text-base">
                   <span>
-                    ডেলিভারি চার্জ ({deliveryArea === 'dhaka' ? 'ঢাকার ভিতরে' : 'ঢাকার বাইরে'})
+                    ডেলিভারি চার্জ ({deliveryArea === 'dhaka' ? 'ঢাকা শহর' : 'ঢাকার বাইরে'})
                   </span>
                   <span className="font-bold text-white">৳{toBanglaNumber(deliveryCharge)}</span>
                 </div>
 
-                <div className="pt-3 border-t border-white/20 flex justify-between items-center text-lg sm:text-xl">
+                <div className="pt-3 border-t border-white/25 flex justify-between items-center text-lg sm:text-xl">
                   <span className="font-extrabold text-white">সর্বমোট প্রদেয় মূল্য</span>
                   <span className="font-extrabold text-3xl text-white">
                     ৳{toBanglaNumber(grandTotal)}
@@ -274,10 +383,10 @@ export const OrderSection: React.FC = () => {
 
               <div className="mb-6 pb-4 border-b border-slate-200">
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  অর্ডার ফর্ম
+                  ৩. অর্ডার ফর্ম পূরণ করুন
                 </h3>
                 <p className="text-sm text-slate-500">
-                  আপনার ডেলিভারি তথ্য সঠিকভাবে পূরণ করুন
+                  আপনার ডেলিভারি ঠিকানা ও মোবাইল নম্বর সঠিকভাবে দিন
                 </p>
               </div>
 
@@ -352,74 +461,23 @@ export const OrderSection: React.FC = () => {
                   )}
                 </div>
 
-                {/* Delivery Area Selection */}
-                <div className="space-y-2.5">
-                  <label className="block text-sm sm:text-base font-bold text-slate-800">
-                    ডেলিভারি এলাকা নির্বাচন করুন <span className="text-red-500">*</span>
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-
-                    {/* Option 1: Dhaka */}
-                    <label
-                      className={`relative flex items-center justify-between p-4 rounded-2xl border-2 cursor-pointer transition-all bg-white ${deliveryArea === 'dhaka'
-                        ? 'border-[#0068FF] ring-2 ring-[#0068FF]/15 shadow-sm'
-                        : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <input
-                          type="radio"
-                          name="deliveryArea"
-                          value="dhaka"
-                          checked={deliveryArea === 'dhaka'}
-                          onChange={() => setDeliveryArea('dhaka')}
-                          className="w-4.5 h-4.5 text-[#0068FF] focus:ring-[#0068FF]"
-                        />
-                        <div>
-                          <p className="text-sm sm:text-base font-bold text-slate-900">ঢাকা শহর</p>
-                          <p className="text-xs text-slate-500">২৪-৪৮ ঘণ্টার মধ্যে</p>
-                        </div>
-                      </div>
-                      <span className="text-xs sm:text-sm font-bold text-[#0068FF] bg-blue-50 px-2.5 py-1 rounded-lg">
-                        ৳{toBanglaNumber(PRODUCT_INFO.deliveryDhaka)}
-                      </span>
-                    </label>
-
-                    {/* Option 2: Outside Dhaka */}
-                    <label
-                      className={`relative flex items-center justify-between p-4 rounded-2xl border-2 cursor-pointer transition-all bg-white ${deliveryArea === 'outside'
-                        ? 'border-[#0068FF] ring-2 ring-[#0068FF]/15 shadow-sm'
-                        : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <input
-                          type="radio"
-                          name="deliveryArea"
-                          value="outside"
-                          checked={deliveryArea === 'outside'}
-                          onChange={() => setDeliveryArea('outside')}
-                          className="w-4.5 h-4.5 text-[#0068FF] focus:ring-[#0068FF]"
-                        />
-                        <div>
-                          <p className="text-sm sm:text-base font-bold text-slate-900">ঢাকার বাইরে</p>
-                          <p className="text-xs text-slate-500">সারা বাংলাদেশে</p>
-                        </div>
-                      </div>
-                      <span className="text-xs sm:text-sm font-bold text-[#0068FF] bg-blue-50 px-2.5 py-1 rounded-lg">
-                        ৳{toBanglaNumber(PRODUCT_INFO.deliveryOutside)}
-                      </span>
-                    </label>
-
-                  </div>
+                {/* Selected Delivery Area Display (Read-only status from left summary selection, no prices) */}
+                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-blue-50/60 border border-blue-100">
+                  <span className="text-sm font-medium text-slate-700 flex items-center gap-2">
+                    <FiMapPin className="w-4 h-4 text-[#0068FF]" />
+                    ডেলিভারি এলাকা:
+                  </span>
+                  <span className="text-sm font-bold text-[#0068FF] bg-white px-3.5 py-1 rounded-xl border border-blue-200/80 shadow-2xs">
+                    {deliveryArea === 'dhaka' ? 'ঢাকা শহর' : 'ঢাকার বাইরে'}
+                  </span>
                 </div>
 
                 {/* Primary CTA Submit Button (Styled with #0068ff Gradient - Sleeker & Compact) */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-blue bg-gradient-blue-hover text-white text-sm sm:text-base font-bold py-3 sm:py-3.5 px-5 sm:px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full bg-gradient-blue bg-gradient-blue-hover text-white text-sm sm:text-base font-bold py-3.5 sm:py-4 px-5 sm:px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-2 cursor-pointer mt-2"
                 >
-                  <FiShoppingBag className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white shrink-0" />
+                  <FiShoppingBag className="w-5 h-5 text-white shrink-0" />
                   <span>অর্ডার কনফার্ম করুন — ৳{toBanglaNumber(grandTotal)}</span>
                 </button>
 
@@ -438,73 +496,119 @@ export const OrderSection: React.FC = () => {
           role="dialog"
           aria-modal="true"
           aria-label="অর্ডার কনফার্মেশন"
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-3.5 sm:p-6 overflow-y-auto animate-in fade-in"
         >
-          <div className="bg-white rounded-3xl max-w-lg w-full p-7 sm:p-9 shadow-2xl border border-slate-200 relative animate-in zoom-in-95">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl border border-slate-200 relative my-6 sm:my-8 max-h-[calc(100vh-3rem)] overflow-y-auto animate-in zoom-in-95">
+            {/* Close Button - Well positioned with comfortable tap area */}
             <button
               type="button"
               onClick={resetOrderModal}
-              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer shadow-2xs z-10"
               aria-label="বন্ধ করুন"
             >
-              <FiX className="w-6 h-6" />
+              <FiX className="w-5 h-5" />
             </button>
 
-            <div className="text-center space-y-3">
-              <div className="w-18 h-18 rounded-full bg-blue-50 text-[#0068FF] mx-auto flex items-center justify-center shadow-xs">
-                <FiCheckCircle className="w-10 h-10" />
+            {/* Header / Success Message */}
+            <div className="text-center space-y-2 pt-1 sm:pt-0">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center shadow-xs border border-emerald-100">
+                <FiCheckCircle className="w-9 h-9 sm:w-10 sm:h-10" />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
                 ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
                 আমাদের কাস্টমার প্রতিনিধি খুব শীঘ্রই আপনার নম্বরে কল করে অর্ডারটি ভেরিফাই করবেন।
               </p>
             </div>
 
-            {/* Invoice Summary Box */}
-            <div className="my-6 p-5 rounded-2xl bg-slate-50 border border-slate-200 text-sm space-y-2.5 text-slate-700">
-              <div className="flex justify-between border-b border-slate-200/80 pb-2">
-                <span className="font-semibold text-slate-900">পণ্য:</span>
-                <span>{PRODUCT_INFO.nameBangla}</span>
+            {/* Customer Details & Order Breakdown Box */}
+            <div className="mt-5 space-y-3.5">
+
+              {/* 1. Customer Information Card (Full name, phone, address) */}
+              <div className="p-4 sm:p-4.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm space-y-2.5">
+                <div className="flex items-center justify-between border-b border-slate-200/90 pb-2">
+                  <span className="font-bold text-slate-900 flex items-center gap-1.5">
+                    <FiMapPin className="w-4 h-4 text-[#0068FF]" />
+                    আপনার দেওয়া ডেলিভারি তথ্য
+                  </span>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-[#0068FF] border border-blue-100">
+                    ক্যাশ অন ডেলিভারি
+                  </span>
+                </div>
+
+                {/* Full Customer Name */}
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-0.5 sm:gap-2">
+                  <span className="text-slate-500 font-medium shrink-0">নাম:</span>
+                  <span className="font-bold text-slate-900 break-words text-left sm:text-right">
+                    {submittedOrder.customerName}
+                  </span>
+                </div>
+
+                {/* Mobile Phone Number */}
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-0.5 sm:gap-2">
+                  <span className="text-slate-500 font-medium shrink-0">মোবাইল নম্বর:</span>
+                  <span className="font-bold text-slate-900 font-latin tracking-wide text-left sm:text-right">
+                    {submittedOrder.phoneNumber}
+                  </span>
+                </div>
+
+                {/* Full Address - Clearly displayed without truncation */}
+                <div className="flex flex-col gap-1 pt-1.5 border-t border-slate-200/80">
+                  <span className="text-slate-500 font-medium">সম্পূর্ণ ঠিকানা:</span>
+                  <div className="font-semibold text-slate-900 text-left bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/90 break-words leading-relaxed text-xs sm:text-sm">
+                    {submittedOrder.fullAddress}
+                  </div>
+                </div>
+
+                {/* Selected Delivery Area */}
+                <div className="flex justify-between items-center pt-1 border-t border-slate-200/80">
+                  <span className="text-slate-500 font-medium">ডেলিভারি এলাকা:</span>
+                  <span className="font-bold text-[#0068FF] bg-white px-2.5 py-0.5 rounded-lg border border-slate-200 shadow-2xs">
+                    {submittedOrder.deliveryArea === 'dhaka' ? 'ঢাকা শহর' : 'ঢাকার বাইরে'}
+                  </span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span>নির্বাচিত রঙ:</span>
-                <span className="font-bold text-[#0068FF]">{submittedOrder.selectedColor}</span>
+
+              {/* 2. Order Summary & Total Card */}
+              <div className="p-4 sm:p-4.5 rounded-2xl bg-blue-50/50 border border-blue-100 text-xs sm:text-sm space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">পণ্য:</span>
+                  <span className="font-semibold text-slate-900">{PRODUCT_INFO.nameBangla}</span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">নির্বাচিত রঙ:</span>
+                  <span className="font-bold text-[#0068FF]">{submittedOrder.selectedColor}</span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">পরিমাণ:</span>
+                  <span className="font-semibold text-slate-900">{toBanglaNumber(submittedOrder.quantity)} পিস</span>
+                </div>
+
+                <div className="flex justify-between items-center border-t border-blue-200/80 pt-2 text-base sm:text-lg font-bold text-slate-900">
+                  <span>সর্বমোট বিল:</span>
+                  <span className="text-xl sm:text-2xl font-extrabold text-[#0068FF]">
+                    ৳{toBanglaNumber(grandTotal)}
+                  </span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span>পরিমাণ:</span>
-                <span className="font-medium text-slate-900">{toBanglaNumber(submittedOrder.quantity)} পিস</span>
-              </div>
-              <div className="flex justify-between">
-                <span>ক্রেতার নাম:</span>
-                <span className="font-medium text-slate-900">{submittedOrder.customerName}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>মোবাইল নম্বর:</span>
-                <span className="font-medium text-slate-900">{submittedOrder.phoneNumber}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>ঠিকানা:</span>
-                <span className="font-medium text-slate-900 text-right max-w-[220px] truncate">
-                  {submittedOrder.fullAddress}
-                </span>
-              </div>
-              <div className="flex justify-between border-t border-slate-200/80 pt-2.5 text-lg font-bold text-slate-900">
-                <span>সর্বমোট বিল:</span>
-                <span className="text-[#0068FF]">৳{toBanglaNumber(grandTotal)}</span>
-              </div>
+
             </div>
 
-            <button
-              type="button"
-              onClick={resetOrderModal}
-              className="w-full bg-gradient-blue bg-gradient-blue-hover text-white font-bold py-4 rounded-2xl transition-all cursor-pointer text-base"
-            >
-              ঠিক আছে
-            </button>
+            {/* Confirmation Action Button */}
+            <div className="mt-5">
+              <button
+                type="button"
+                onClick={resetOrderModal}
+                className="w-full bg-gradient-blue bg-gradient-blue-hover text-white font-bold py-3.5 sm:py-4 rounded-2xl transition-all cursor-pointer text-sm sm:text-base shadow-md hover:shadow-lg active:scale-98"
+              >
+                ঠিক আছে
+              </button>
+            </div>
           </div>
         </div>
       )}

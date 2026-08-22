@@ -1,6 +1,5 @@
 import React from 'react';
 import { FiShoppingBag, FiTruck, FiShield } from 'react-icons/fi';
-import { toBanglaNumber, PRODUCT_INFO } from '../data/productData';
 
 export const FinalCTA: React.FC = () => {
   const scrollToOrder = () => {
@@ -36,18 +35,15 @@ export const FinalCTA: React.FC = () => {
             ঘড়ি, অ্যালার্ম ও মিনি ফ্যান—প্রয়োজনীয় তিনটি সুবিধা একসাথে। পড়ার টেবিল কিংবা অফিসের ব্যস্ত ডেস্কে নিয়ে আসুন স্বস্তি ও নান্দনিকতা।
           </p>
 
-          {/* CTA Button with White Background (Compact left & right padding) */}
+          {/* CTA Button with White Background (Only text, no price) */}
           <div className="pt-2 flex items-center justify-center">
             <button
               type="button"
               onClick={scrollToOrder}
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-[#0068FF] text-sm sm:text-base font-bold px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl active:scale-98 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-[#0068FF] text-sm sm:text-base font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl active:scale-98 cursor-pointer"
             >
-              <FiShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0068FF] shrink-0" />
-              <span>অর্ডার করতে ক্লিক করুন — ৳{toBanglaNumber(PRODUCT_INFO.basePrice)}</span>
-              <span className="hidden sm:inline text-xs text-slate-400 font-normal line-through">
-                ৳{toBanglaNumber(PRODUCT_INFO.regularPrice)}
-              </span>
+              <FiShoppingBag className="w-4.5 h-4.5 text-[#0068FF] shrink-0" />
+              <span>অর্ডার করতে ক্লিক করুন</span>
             </button>
           </div>
 
