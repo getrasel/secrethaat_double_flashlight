@@ -93,7 +93,7 @@ export const Gallery: React.FC = () => {
           </div>
 
           {/* Thumbnails Row */}
-          <div className="mt-4 sm:mt-6 grid grid-cols-5 gap-2.5 sm:gap-3.5">
+          <div className="mt-4 sm:mt-6 grid grid-cols-4 gap-2.5 sm:gap-3.5">
             {GALLERY_ITEMS.map((item, index) => {
               const isActive = index === activeIndex;
               return (

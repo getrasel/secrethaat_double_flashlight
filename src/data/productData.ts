@@ -1,77 +1,69 @@
-import alarmClockImg from '../assets/images/alarm_clock.jpg';
-import tableFanImg from '../assets/images/table_fan.jpg';
-import deskClockImg from '../assets/images/desk_clock.jpg';
-import clockBacksideImg from '../assets/images/clock_backside.jpg';
-import fullboxClockImg from '../assets/images/fullbox_clock.jpg';
+import cartoonClockImg from '../assets/images/3inone_table_lamp/cartoon_clock.jpg';
+import tableClockImg from '../assets/images/3inone_table_lamp/table_clock.jpg';
+import tableClockHolderImg from '../assets/images/3inone_table_lamp/table_clock_holder.jpg';
+import timeLightImg from '../assets/images/3inone_table_lamp/time_light.jpg';
 
 import type { ProductColor, GalleryItem, BenefitItem, FeatureSpec, TestimonialItem, FAQItem } from '../types';
 
 export const PRODUCT_INFO = {
-  name: '2-in-1 Fashion Fan Alarm Clock',
-  nameBangla: '২-ইন-১ ফ্যাশন ফ্যান অ্যালার্ম ক্লক',
-  tagline: 'ঘড়ি ও মিনি ফ্যান—দুই সুবিধা একসাথে!',
-  subTagline: 'কিউট অ্যাস্ট্রোনট ডিজাইন, 500mAh রিচার্জেবল সাইলেন্ট ফ্যান এবং নিখুঁত অ্যালার্ম ঘড়ি নিয়ে আপনার পড়ার বা কাজের টেবিলকে করুন আরও আকর্ষণীয় ও আরামদায়ক।',
-  regularPrice: 1100,
-  basePrice: 890,
-  discountAmount: 210,
-  discountPercentage: 19,
+  name: '3-in-1 Cute Cartoon Theme Table Lamp',
+  nameBangla: '৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প',
+  tagline: 'আপনার টেবিলকে রাখুন সুন্দর ও গোছানো।',
+  subTagline: 'পড়ার টেবিল বা ঘরের কর্নারকে আরও সুন্দর ও গোছানো রাখতে নিয়ে এলাম ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প—ল্যাম্প, ঘড়ি ও পেন হোল্ডার একসাথে।',
+  regularPrice: 1190,
+  basePrice: 990,
+  discountAmount: 200,
+  discountPercentage: 17,
   deliveryDhaka: 70,
   deliveryOutside: 130,
 };
 
 export const COLOR_VARIANTS: ProductColor[] = [
   {
-    id: 'pink',
-    name: 'সুইট পিংক',
-    nameEn: 'Sweet Pink',
-    hex: '#F472B6',
-    badgeBg: 'bg-pink-100 text-pink-700 border-pink-200',
-    image: deskClockImg,
+    id: 'yellow',
+    name: 'কিউট ইয়েলো',
+    nameEn: 'Cute Yellow',
+    hex: '#FBBF24',
+    badgeBg: 'bg-amber-100 text-amber-700 border-amber-200',
+    image: tableClockImg,
   },
   {
-    id: 'blue',
-    name: 'স্কাই ব্লু',
-    nameEn: 'Sky Blue',
-    hex: '#38BDF8',
-    badgeBg: 'bg-sky-100 text-sky-700 border-sky-200',
-    image: alarmClockImg,
+    id: 'orange',
+    name: 'কিউট অরেঞ্জ',
+    nameEn: 'Cute Orange',
+    hex: '#FB923C',
+    badgeBg: 'bg-orange-100 text-orange-700 border-orange-200',
+    image: timeLightImg,
   },
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
-    title: 'স্কাই ব্লু কমপ্লিট লুক',
-    caption: 'ঘড়ি ও ফ্যানের আকর্ষণীয় কম্বিনেশন',
-    image: alarmClockImg,
+    title: '৩-ইন-১ কমপ্লিট লুক',
+    caption: 'টেবিল ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার',
+    image: tableClockHolderImg,
     category: 'মেইন লুক',
   },
   {
     id: '2',
-    title: 'টেবিল ফ্যান মোড',
-    caption: 'গরমের দিনে পড়াশোনা ও কাজের সময় নীরব বাতাস',
-    image: tableFanImg,
-    category: 'ফ্যান ভিউ',
+    title: 'কিউট ইয়েলো বিয়ার মোড',
+    caption: 'Moon Shape Flexible LED Light সহ চমৎকার স্টাডি ভিউ',
+    image: tableClockImg,
+    category: 'টেবিল ল্যাম্প',
   },
   {
     id: '3',
-    title: 'সুইট পিংক ডেস্ক ভিউ',
-    caption: 'পড়ার টেবিল ও অফিস ডেস্কে চমৎকার মানানসই',
-    image: deskClockImg,
-    category: 'ডেস্ক ডেকোর',
+    title: 'কিউট অরেঞ্জ কার্টুন মোড',
+    caption: 'রাতে পড়ার টেবিল ও বেডসাইডে ব্যবহারের উপযোগী',
+    image: timeLightImg,
+    category: 'নাইট লাইট',
   },
   {
     id: '4',
-    title: 'রিয়ার কন্ট্রোল ও ব্যাটারি পোর্ট',
-    caption: 'সহজ টাইম অ্যাডজাস্টমেন্ট ও AA ব্যাটারি স্লট',
-    image: clockBacksideImg,
-    category: 'কন্ট্রোল প্যানেল',
-  },
-  {
-    id: '5',
     title: 'প্রিমিয়াম বক্স প্যাকেজিং',
-    caption: 'নিরাপদ প্যাকেজিংসহ উপহারের জন্য সেরা পছন্দ',
-    image: fullboxClockImg,
+    caption: 'নিরাপদ প্যাকেজিংসহ প্রিয়জনকে উপহার দেওয়ার সেরা পছন্দ',
+    image: cartoonClockImg,
     category: 'প্যাকেজিং',
   },
 ];
@@ -79,58 +71,58 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const PRODUCT_BENEFITS: BenefitItem[] = [
   {
     id: 1,
-    title: '২-ইন-১ সুবিধা',
-    description: 'ঘড়ি ও মিনি ফ্যান একসাথে। একটি গ্যাজেটেই সময় দেখা, অ্যালার্ম সেট করা এবং গরমের দিনে শীতল বাতাস উপভোগ করা যায়।',
-    iconName: 'dual',
-    tag: 'মাল্টিফাংশনাল',
+    title: 'নমনীয় LED লাইট',
+    description: 'ওপরের দিকে রয়েছে চাঁদ আকৃতির (Moon Shape) ফ্লেক্সিবল LED ল্যাম্প, যা রাতে পড়ার টেবিল বা নাইট স্ট্যান্ডে ব্যবহারের জন্য দারুণ উপযোগী।',
+    iconName: 'lamp',
+    tag: 'Moon Shape LED',
   },
   {
     id: 2,
-    title: 'রিচার্জেবল ফ্যান (500mAh)',
-    description: 'ফ্যানে রয়েছে 500mAh রিচার্জেবল ব্যাটারি। USB ক্যাবল ব্যবহার করে পাওয়ার ব্যাংক, ল্যাপটপ বা USB পোর্ট থেকে সহজে চার্জ দেওয়া সম্ভব।',
-    iconName: 'battery',
-    tag: 'USB চার্জিং',
+    title: 'অ্যানালগ ঘড়ি',
+    description: 'সামনে রয়েছে স্পষ্ট সংখ্যাযুক্ত Quartz ব্যাটারি চালিত অ্যানালগ ঘড়ি, যা একই সঙ্গে সময় দেখার সুবিধা ও সৌন্দর্য দুটোই যোগ করে।',
+    iconName: 'clock',
+    tag: 'Quartz ঘড়ি',
   },
   {
     id: 3,
-    title: 'সাইলেন্ট এয়ারফ্লো',
-    description: 'ফ্যান চলার সময় কোনো বিরক্তিকর শব্দ তৈরি করে না। তাই পড়াশোনা, কাজ বা অফিসের সময় একাগ্রতা নষ্ট না করে শান্তিতে ব্যবহার করা যায়।',
-    iconName: 'wind',
-    tag: 'শব্দহীন বাতাস',
+    title: 'পেন হোল্ডার',
+    description: 'ঘড়ির পাশেই রয়েছে একটি সুন্দর পেন/পেন্সিল হোল্ডার, যেখানে কলম, পেন্সিল ও ছোটখাটো জিনিস গুছিয়ে রাখা যায়।',
+    iconName: 'holder',
+    tag: 'পেন হোল্ডার',
   },
   {
     id: 4,
-    title: 'সহজ ব্যাটারি সিস্টেম',
-    description: 'ঘড়ি ও অ্যালার্ম নির্বিঘ্নে দীর্ঘ সময় পরিচালনার জন্য প্রয়োজন মাত্র ১টি সাধারণ AA 1.5V ব্যাটারি।',
-    iconName: 'clock',
-    tag: '১টি AA 1.5V',
+    title: '৩-ইন-১ মাল্টিফাংশনাল ব্যবহার',
+    description: 'একটি পণ্যেই পাওয়া যাচ্ছে: টেবিল ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার। ফলে এটি একই সঙ্গে ব্যবহারিক এবং ডেকোরেশন—দুই কাজেই উপযোগী।',
+    iconName: 'multipurpose',
+    tag: '৩-ইন-১ সুবিধা',
   },
   {
     id: 5,
-    title: 'কিউট অ্যাস্ট্রোনট ডিজাইন',
-    description: 'কিউট অ্যাস্ট্রোনট/কার্টুন ডিজাইনটি পড়ার টেবিল, অফিস ডেস্ক বা বেডসাইড টেবিলে দারুণ সৌন্দর্য বাড়ায়। শিশুদের স্টাডি স্পেসও করে তোলে আকর্ষণীয়।',
-    iconName: 'sparkles',
-    tag: 'ইউনিক লুক',
+    title: 'পড়ার টেবিল ও ঘর সাজাতে উপযোগী',
+    description: 'বাচ্চাদের পড়াশোনার টেবিল, নাইট স্ট্যান্ড কিংবা ঘরের কর্নারকে আরও সুন্দর ও গোছানো করে তুলতে এটি চমৎকার একটি সংযোজন।',
+    iconName: 'home',
+    tag: 'ডেস্ক ডেকোর',
   },
   {
     id: 6,
-    title: 'গিফট হিসেবেও উপযোগী',
-    description: 'ইউনিক ও প্রয়োজনীয় ডিজাইনের কারণে এটি প্রিয়জন, বন্ধু বা পরিবারের শিশুদের জন্য একটি সুন্দর ও প্রশংসনীয় উপহার হতে পারে।',
+    title: 'সুন্দর গিফট আইডিয়া',
+    description: 'এর কিউট ডিজাইন ও ব্যবহারিক সুবিধার কারণে এটি প্রিয়জন, শিশু বা পরিবারের সদস্যদের জন্য একটি আকর্ষণীয় উপহার হতে পারে।',
     iconName: 'gift',
-    tag: 'পারফেক্ট উপহার',
+    tag: 'সেরা উপহার',
   },
 ];
 
 export const PRODUCT_SPECS: FeatureSpec[] = [
-  { label: 'পণ্যের নাম', value: '2-in-1 Fashion Fan Alarm Clock', icon: 'tag', highlight: true },
-  { label: 'পণ্যের ধরন', value: 'অ্যালার্ম ক্লক + মিনি ফ্যান', icon: 'layers', highlight: true },
-  { label: 'ফ্যান ব্যাটারি', value: '500mAh রিচার্জেবল ব্যাটারি', icon: 'battery-charging', highlight: true },
-  { label: 'চার্জিং সিস্টেম', value: 'USB কেবল চার্জিং সাপোর্ট', icon: 'zap' },
-  { label: 'ফ্যান মোড', value: 'Silent Airflow (শব্দহীন বাতাস)', icon: 'wind' },
-  { label: 'ঘড়ির ব্যাটারি', value: '১টি AA 1.5V ব্যাটারি', icon: 'clock' },
-  { label: 'ডিজাইন থিম', value: 'কিউট অ্যাস্ট্রোনট / কার্টুন ডিজাইন', icon: 'smile' },
-  { label: 'উপযুক্ত স্থান', value: 'পড়ার টেবিল, অফিস ডেস্ক, বেডসাইড টেবিল, বাচ্চাদের স্টাডি টেবিল', icon: 'home' },
-  { label: 'প্যাকেজে যা থাকছে', value: '১টি ২-ইন-১ অ্যালার্ম ক্লক ও ফ্যান, ১টি USB চার্জিং ক্যাবল', icon: 'box' },
+  { label: 'পণ্যের নাম', value: '3-in-1 Cute Cartoon Theme Table Lamp', icon: 'tag', highlight: true },
+  { label: 'পণ্যের ধরন', value: '৩-ইন-১ মাল্টিফাংশনাল টেবিল ল্যাম্প', icon: 'layers', highlight: true },
+  { label: 'প্রধান সুবিধা', value: 'LED ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার', icon: 'star', highlight: true },
+  { label: 'ল্যাম্প টাইপ', value: 'Moon Shape Flexible LED Light', icon: 'zap' },
+  { label: 'ঘড়ির ধরন', value: 'Quartz Battery Powered Analog Clock', icon: 'clock' },
+  { label: 'ডিজাইন থিম', value: 'Cute Bear / Rabbit Cartoon Theme', icon: 'smile' },
+  { label: 'পেন হোল্ডার', value: 'পেন, পেন্সিল ও ছোটখাটো জিনিস রাখার সুবিধা', icon: 'box' },
+  { label: 'উপযুক্ত স্থান', value: 'বাচ্চাদের পড়ার টেবিল, নাইট স্ট্যান্ড, ঘরের কর্নার, ডেস্ক ডেকোরেশন, গিফট', icon: 'home' },
+  { label: 'প্যাকেজে যা থাকছে', value: '১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প', icon: 'box' },
 ];
 
 export const TESTIMONIALS: TestimonialItem[] = [
@@ -140,9 +132,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
     location: 'মিরপুর, ঢাকা',
     rating: 5,
     date: '৩ দিন আগে',
-    comment: 'পড়ার টেবিলের জন্য নিয়েছিলাম। দেখতে অসম্ভব কিউট এবং ফ্যানের বাতাস খুব আরামদায়ক। পড়ার সময় কোনো শব্দ হয় না, এটা সবথেকে ভালো লেগেছে।',
-    colorPurchased: 'সুইট পিংক (Sweet Pink)',
-    avatarColor: 'bg-rose-100 text-rose-700',
+    comment: 'বাচ্চার পড়ার টেবিলের জন্য নিয়েছিলাম। দেখতে দারুণ কিউট এবং ওপরের চাঁদের মতো LED লাইটের আলো পড়ার জন্য খুব সুন্দর। পেন হোল্ডারে কলমগুলোও সাজিয়ে রাখা যায়।',
+    colorPurchased: 'কিউট ইয়েলো (Cute Yellow)',
+    avatarColor: 'bg-amber-100 text-amber-700',
   },
   {
     id: 't2',
@@ -150,9 +142,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
     location: 'উত্তরা, ঢাকা',
     rating: 5,
     date: '১ সপ্তাহ আগে',
-    comment: 'আমার অফিস ডেস্কের জন্য কিনেছি। এক গ্যাজেটেই টাইম দেখা, অ্যালার্ম এবং কাজের মাঝে একটু বাতাস খাওয়ার সুবিধা পাওয়া সত্যিই চমৎকার!',
-    colorPurchased: 'স্কাই ব্লু (Sky Blue)',
-    avatarColor: 'bg-blue-100 text-blue-700',
+    comment: 'এক গ্যাজেটেই টেবিল ল্যাম্প, ঘড়ি আর পেন হোল্ডার—এই আইডিয়াটা দারুণ! কোয়ালিটি যথেষ্ট প্রিমিয়াম এবং টেবিল খুব পরিপাটি দেখায়।',
+    colorPurchased: 'কিউট অরেঞ্জ (Cute Orange)',
+    avatarColor: 'bg-orange-100 text-orange-700',
   },
   {
     id: 't3',
@@ -160,8 +152,8 @@ export const TESTIMONIALS: TestimonialItem[] = [
     location: 'জিইসি, চট্টগ্রাম',
     rating: 5,
     date: '২ সপ্তাহ আগে',
-    comment: 'আমার ছোট ভাইয়ের বার্থডে গিফট হিসেবে দিয়েছিলাম। ও অ্যাস্ট্রোনট ডিজাইন দেখে ভীষণ খুশি হয়েছে। কোয়ালিটি বেশ ভালো।',
-    colorPurchased: 'স্কাই ব্লু (Sky Blue)',
+    comment: 'আমার ছোট ভাগ্নির জন্মদিনে গিফট দিয়েছিলাম। ও কার্টুন ডিজাইন আর লাইট দেখে ভীষণ আনন্দ পেয়েছে। উপহার দেওয়ার জন্য সেরা একটি জিনিস।',
+    colorPurchased: 'কিউট ইয়েলো (Cute Yellow)',
     avatarColor: 'bg-emerald-100 text-emerald-700',
   },
   {
@@ -170,8 +162,8 @@ export const TESTIMONIALS: TestimonialItem[] = [
     location: 'ধানমন্ডি, ঢাকা',
     rating: 5,
     date: '২ সপ্তাহ আগে',
-    comment: 'USB দিয়ে সহজেই চার্জ দেওয়া যায় এবং ঘড়ির অ্যালার্ম সাউন্ড যথেষ্ট স্পষ্ট। প্যাকেজিংও সুন্দর ছিল। ধন্যবাদ!',
-    colorPurchased: 'সুইট পিংক (Sweet Pink)',
+    comment: 'অ্যানালগ ঘড়িটি একদম নিখুঁত সময় দেয় এবং ফ্লেক্সিবল LED ল্যাম্পটি ইচ্ছামতো অ্যাডজাস্ট করা যায়। প্যাকেজিংও অনেক ভালো ছিল। ধন্যবাদ!',
+    colorPurchased: 'কিউট অরেঞ্জ (Cute Orange)',
     avatarColor: 'bg-zinc-100 text-zinc-700',
   },
 ];
@@ -179,43 +171,43 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq1',
-    question: 'এটি কি ঘড়ি এবং ফ্যান দুটোই?',
-    answer: 'হ্যাঁ, এটি একটি ২-ইন-১ অ্যালার্ম ক্লক ও মিনি ফ্যান। আপনি একই ডিভাইসে সময় দেখা, অ্যালার্ম সেট করা এবং বাতাস উপভোগ করতে পারবেন।',
+    question: 'এটি কি ৩-ইন-১ পণ্য?',
+    answer: 'হ্যাঁ। এতে টেবিল ল্যাম্প, অ্যানালগ ঘড়ি এবং পেন হোল্ডার—এই তিনটি সুবিধা একসাথে রয়েছে।',
   },
   {
     id: 'faq2',
-    question: 'ফ্যানটি কীভাবে চার্জ করতে হয়?',
-    answer: 'USB ক্যাবলের মাধ্যমে ফ্যানটি খুব সহজেই চার্জ করা যায়। ল্যাপটপ, পাওয়ার ব্যাংক বা যেকোনো USB অ্যাডাপ্টার দিয়ে চার্জ দিতে পারবেন।',
+    question: 'ল্যাম্পটি কেমন?',
+    answer: 'এতে চাঁদ আকৃতির (Moon Shape) ফ্লেক্সিবল LED ল্যাম্প রয়েছে, যা সহজে যেকোনো দিকে ঘুরিয়ে রাতে পড়াশোনা বা বেডসাইডে ব্যবহার করা যায়।',
   },
   {
     id: 'faq3',
-    question: 'ফ্যানের ব্যাটারি কত?',
-    answer: 'ফ্যানে রয়েছে 500mAh রিচার্জেবল ব্যাটারি, যা নিরবচ্ছিন্নভাবে সুন্দর বাতাস সরবরাহ করে।',
+    question: 'এতে কি ঘড়ি আছে?',
+    answer: 'হ্যাঁ, সামনে স্পষ্ট সংখ্যাযুক্ত একটি Quartz ব্যাটারি চালিত অ্যানালগ ঘড়ি রয়েছে।',
   },
   {
     id: 'faq4',
-    question: 'ফ্যানটি কি বেশি শব্দ করে?',
-    answer: 'না, এটি Silent Airflow প্রযুক্তিতে তৈরি, তাই চলার সময় বিরক্তিকর কোনো শব্দ হয় না। পড়াশোনা বা কাজের সময় অনায়াসে ব্যবহার করা যায়।',
+    question: 'পেন রাখা যাবে কি?',
+    answer: 'হ্যাঁ, ঘড়ির পাশেই রয়েছে একটি সুন্দর পেন হোল্ডার, যেখানে কলম, পেন্সিল ও ছোটখাটো জিনিস গুছিয়ে রাখা যায়।',
   },
   {
     id: 'faq5',
-    question: 'ঘড়ির জন্য কী ব্যাটারি লাগে?',
-    answer: 'ঘড়িটি পরিচালনার জন্য মাত্র ১টি সাধারণ AA 1.5V ব্যাটারি প্রয়োজন হয়।',
+    question: 'কোথায় ব্যবহার করা যায়?',
+    answer: 'বাচ্চাদের পড়ার টেবিল, নাইট স্ট্যান্ড, অফিস ডেস্ক কিংবা ঘরের যেকোনো কর্নারে ডেকোরেশন ও ব্যবহারের জন্য দারুণ উপযোগী।',
   },
   {
     id: 'faq6',
-    question: 'ঢাকার ভিতরে ডেলিভারি চার্জ কত?',
-    answer: 'ঢাকার ভিতরে হোম ডেলিভারি চার্জ মাত্র ৳৭০। সাধারণত ২৪ থেকে ৪৮ ঘণ্টার মধ্যে ডেলিভারি সম্পন্ন হয়।',
+    question: 'এটি কি গিফট হিসেবে দেওয়া যায়?',
+    answer: 'হ্যাঁ, এর কিউট কার্টুন ডিজাইন ও ব্যবহারিক সুবিধার কারণে এটি শিশু, প্রিয়জন বা পরিবারের সদস্যদের জন্য আকর্ষণীয় একটি উপহার।',
   },
   {
     id: 'faq7',
-    question: 'ঢাকার বাইরে ডেলিভারি চার্জ কত?',
-    answer: 'ঢাকার বাইরে সারা বাংলাদেশে হোম ডেলিভারি চার্জ ৳১৩০। ২ থেকে ৩ কার্যদিবসের মধ্যে কুরিয়ারের মাধ্যমে পৌঁছে দেওয়া হয়।',
+    question: 'ঢাকার ভিতরে ও বাইরে ডেলিভারি চার্জ কত?',
+    answer: 'ঢাকার ভিতরে হোম ডেলিভারি চার্জ মাত্র ৳৭০ এবং ঢাকার বাইরে সারা বাংলাদেশে ৳১৩০। ক্যাশ অন ডেলিভারিতে পণ্য দেখে মূল্য পরিশোধ করতে পারবেন।',
   },
   {
     id: 'faq8',
     question: 'প্যাকেজে কী কী থাকবে?',
-    answer: 'প্যাকেজে থাকবে ১টি ২-ইন-১ অ্যালার্ম ক্লক ও ফ্যান এবং ১টি USB চার্জিং ক্যাবল।',
+    answer: 'প্যাকেজে থাকবে ১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প (Moon Shape LED লাইট, অ্যানালগ ঘড়ি ও পেন হোল্ডারসহ) ও সুরক্ষিত বক্স প্যাকেজিং।',
   },
 ];
 

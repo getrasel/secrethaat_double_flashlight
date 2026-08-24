@@ -47,14 +47,14 @@ export const Navbar: React.FC = () => {
             }}
           >
             <div className="w-10 h-10 rounded-2xl bg-gradient-blue text-white flex items-center justify-center font-latin font-extrabold text-base shadow-sm group-hover:scale-105 transition-transform">
-              2in1
+              3in1
             </div>
             <div className="flex flex-col">
               <span className="font-latin text-base sm:text-lg font-bold tracking-tight text-slate-900 leading-tight">
-                2-in-1 Fan Clock
+                3-in-1 Table Lamp
               </span>
               <span className="text-xs sm:text-sm font-bangla font-medium text-slate-500 leading-none">
-                ফ্যাশন ফ্যান অ্যালার্ম ক্লক
+                ৩-ইন-১ কার্টুন টেবিল ল্যাম্প
               </span>
             </div>
           </a>

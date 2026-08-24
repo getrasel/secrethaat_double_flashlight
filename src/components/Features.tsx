@@ -2,14 +2,15 @@ import React from 'react';
 import {
   FiCheckCircle,
   FiZap,
-  FiVolumeX,
-  FiBattery,
+  FiClock,
   FiSmile,
   FiPackage,
   FiCompass,
-  FiLayers
+  FiLayers,
+  FiStar,
+  FiEdit3
 } from 'react-icons/fi';
-import clockBacksideImg from '../assets/images/clock_backside.jpg';
+import tableClockImg from '../assets/images/3inone_table_lamp/table_clock.jpg';
 import shapeSpiral from '../assets/images/shape/1.png';
 import shapeSparkle from '../assets/images/shape/2.png';
 
@@ -53,8 +54,8 @@ export const Features: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden bg-slate-50 border border-slate-200/90 shadow-sm p-4 sm:p-6 flex flex-col justify-between h-full">
               <div className="flex-1 flex items-center justify-center rounded-2xl overflow-hidden bg-white border border-slate-100 p-3 sm:p-4 min-h-[320px] sm:min-h-[400px] lg:min-h-[460px]">
                 <img
-                  src={clockBacksideImg}
-                  alt="ঘড়ির রিয়ার কন্ট্রোল ও গঠন"
+                  src={tableClockImg}
+                  alt="৩-ইন-১ কার্টুন টেবিল ল্যাম্প গঠন"
                   className="w-full h-full object-contain rounded-xl max-h-[500px]"
                   loading="lazy"
                 />
@@ -70,7 +71,7 @@ export const Features: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-base sm:text-lg text-blue-50 leading-relaxed font-normal">
-                  ঘড়ির পিছন দিকে রয়েছে টাইম ন্যারেশন ও অ্যালার্ম নব এবং নিচে আলাদা অন/অফ সুইচ। যেকোনো বয়সের মানুষ সহজেই পরিচালনা করতে পারবেন।
+                  ল্যাম্পের জন্য রয়েছে ফ্লেক্সিবল নেক ডিজাইন এবং ঘড়ির পেছনে রয়েছে সহজ টাইম সেটিং নব। যেকোনো বয়সের মানুষ বা শিশুরা অনায়াসে পরিচালনা করতে পারবে।
                 </p>
               </div>
             </div>
@@ -88,7 +89,7 @@ export const Features: React.FC = () => {
                   <span>পণ্যের নাম</span>
                 </div>
                 <p className="font-latin text-base font-bold text-slate-900">
-                  2-in-1 Fashion Fan Alarm Clock
+                  3-in-1 Cute Cartoon Theme Table Lamp
                 </p>
               </div>
 
@@ -99,51 +100,51 @@ export const Features: React.FC = () => {
                   <span>পণ্যের ধরন</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  অ্যালার্ম ক্লক + মিনি ফ্যান
+                  ৩-ইন-১ মাল্টিফাংশনাল টেবিল ল্যাম্প
                 </p>
               </div>
 
-              {/* Spec Item: Fan Battery */}
+              {/* Spec Item: Core Benefit */}
+              <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
+                <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
+                  <FiStar className="w-4.5 h-4.5" />
+                  <span>প্রধান সুবিধা</span>
+                </div>
+                <p className="text-base font-bold text-slate-900">
+                  LED ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার
+                </p>
+              </div>
+
+              {/* Spec Item: Lamp Type */}
               <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
                   <FiZap className="w-4.5 h-4.5" />
-                  <span>ফ্যান ব্যাটারি</span>
+                  <span>ল্যাম্পের ধরন</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  <span className="font-latin">500mAh</span> রিচার্জেবল ব্যাটারি
+                  <span className="font-latin">Moon Shape Flexible LED Light</span>
                 </p>
               </div>
 
-              {/* Spec Item: Charging System */}
+              {/* Spec Item: Clock Type */}
               <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
-                  <FiZap className="w-4.5 h-4.5" />
-                  <span>চার্জিং মাধ্যম</span>
+                  <FiClock className="w-4.5 h-4.5" />
+                  <span>ঘড়ির ধরন</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  <span className="font-latin">USB</span> কেবল চার্জিং
+                  <span className="font-latin">Quartz</span> ব্যাটারি চালিত অ্যানালগ ঘড়ি
                 </p>
               </div>
 
-              {/* Spec Item: Fan Airflow */}
+              {/* Spec Item: Pen Holder */}
               <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
-                  <FiVolumeX className="w-4.5 h-4.5" />
-                  <span>ফ্যান প্রযুক্তি</span>
+                  <FiEdit3 className="w-4.5 h-4.5" />
+                  <span>পেন হোল্ডার</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  <span className="font-latin">Silent Airflow</span> (নীরব বাতাস)
-                </p>
-              </div>
-
-              {/* Spec Item: Clock Battery */}
-              <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
-                <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
-                  <FiBattery className="w-4.5 h-4.5" />
-                  <span>ঘড়ির ব্যাটারি</span>
-                </div>
-                <p className="text-base font-bold text-slate-900">
-                  ১টি <span className="font-latin">AA 1.5V</span> ব্যাটারি
+                  কলম, পেন্সিল ও প্রয়োজনীয় জিনিস রাখার সুবিধা
                 </p>
               </div>
 
@@ -151,10 +152,10 @@ export const Features: React.FC = () => {
               <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors sm:col-span-2">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
                   <FiSmile className="w-4.5 h-4.5" />
-                  <span>ডিজাইন ও গঠন</span>
+                  <span>ডিজাইন থিম</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  কিউট অ্যাস্ট্রোনট / কার্টুন প্রিমিয়াম ডিজাইন
+                  Cute Bear / Rabbit Cartoon Theme (আকর্ষণীয় কার্টুন থিম)
                 </p>
               </div>
 
@@ -166,16 +167,19 @@ export const Features: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2.5 pt-1">
                   <span className="text-xs sm:text-sm bg-white border border-slate-200 px-3.5 py-1.5 rounded-xl font-medium text-slate-800">
-                    পড়ার টেবিল
+                    বাচ্চাদের পড়ার টেবিল
                   </span>
                   <span className="text-xs sm:text-sm bg-white border border-slate-200 px-3.5 py-1.5 rounded-xl font-medium text-slate-800">
-                    অফিস ডেস্ক
+                    নাইট স্ট্যান্ড
                   </span>
                   <span className="text-xs sm:text-sm bg-white border border-slate-200 px-3.5 py-1.5 rounded-xl font-medium text-slate-800">
-                    বেডসাইড টেবিল
+                    ঘরের কর্নার
                   </span>
                   <span className="text-xs sm:text-sm bg-white border border-slate-200 px-3.5 py-1.5 rounded-xl font-medium text-slate-800">
-                    শিশুদের স্টাডি টেবিল
+                    ডেস্ক ডেকোরেশন
+                  </span>
+                  <span className="text-xs sm:text-sm bg-white border border-slate-200 px-3.5 py-1.5 rounded-xl font-medium text-slate-800">
+                    গিফট / উপহার
                   </span>
                 </div>
               </div>
@@ -190,7 +194,7 @@ export const Features: React.FC = () => {
                     প্যাকেজে যা থাকছে
                   </span>
                   <p className="text-base sm:text-lg font-extrabold text-white">
-                    ১টি ২-ইন-১ অ্যালার্ম ক্লক ও ফ্যান এবং ১টি USB চার্জিং ক্যাবল
+                    ১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প (LED লাইট, অ্যানালগ ঘড়ি ও পেন হোল্ডারসহ)
                   </p>
                 </div>
               </div>

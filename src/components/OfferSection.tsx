@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiShoppingBag, FiTruck, FiShield, FiCheckCircle } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { toBanglaNumber, PRODUCT_INFO } from '../data/productData';
-import alarmClockImg from '../assets/images/alarm_clock.jpg';
+import tableClockHolderImg from '../assets/images/3inone_table_lamp/table_clock_holder.jpg';
 
 export const OfferSection: React.FC = () => {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -51,7 +51,7 @@ export const OfferSection: React.FC = () => {
   }, []);
 
   const whatsappUrl = `https://wa.me/8801746867350?text=${encodeURIComponent(
-    'হ্যালো, আমি ২-ইন-১ ফ্যাশন ফ্যান অ্যালার্ম ক্লক সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই।'
+    'হ্যালো, আমি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই।'
   )}`;
 
   const scrollToOrder = () => {
@@ -64,13 +64,13 @@ export const OfferSection: React.FC = () => {
   };
 
   return (
-    <section className="pt-[90px] sm:pt-[130px] pb-12 sm:pb-16 bg-white">
+    <section className="pt-[78px] sm:pt-[130px] pb-6 sm:pb-16 bg-white">
       <div className="container-custom">
 
         {/* Main Minimalist Showcase Card: 135deg, #e2eeff 0%, #e2eeff 60%, #0068FF 100% */}
         <div
           style={{ background: 'linear-gradient(135deg, #e2eeff 0%, #e2eeff 60%, #0068FF 100%)' }}
-          className="relative rounded-[28px] sm:rounded-3xl p-6 sm:p-12 md:p-14 overflow-visible healis-shadow-lg"
+          className="relative rounded-[24px] sm:rounded-3xl p-4 sm:p-12 md:p-14 overflow-visible healis-shadow-lg"
         >
 
           {/* Subtle Ambient Glows */}
@@ -78,32 +78,32 @@ export const OfferSection: React.FC = () => {
           <div className="absolute bottom-0 right-0 -mb-16 -mr-16 w-72 h-72 bg-[#0068FF]/15 rounded-full blur-3xl pointer-events-none" />
 
           {/* 60% Left / 40% Right Desktop Grid Layout */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center">
 
             {/* Left Content Column (60% on desktop) */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-3 sm:space-y-6 text-center lg:text-left">
 
               {/* Top Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs sm:text-base font-bold text-[#0068FF] shadow-xs">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs sm:text-base font-bold text-[#0068FF] shadow-xs">
                 <FiCheckCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0068FF]" />
-                <span>২-ইন-১ মাল্টিফাংশনাল গ্যাজেট</span>
+                <span>৩-ইন-১ মাল্টিফাংশনাল গ্যাজেট</span>
               </div>
 
-              {/* Main Headline */}
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.25]">
-                <span className="text-slate-900">টেবিলকে করুন আকর্ষণীয়,</span><br />
+              {/* Main Headline (Bigger & punchy) */}
+              <h1 className="text-[26px] sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.25]">
+                <span className="text-slate-900">আপনার টেবিলকে রাখুন</span><br />
                 <span className="bg-[linear-gradient(90deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] bg-clip-text text-transparent drop-shadow-2xs">
-                  গরমে পান স্বস্তি!
+                  সুন্দর ও গোছানো।
                 </span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-sm sm:text-base lg:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
-                কিউট স্পেস ডিজাইনের ফ্যান ও অ্যালার্ম ক্লক। একসাথে ফ্যানের বাতাস ও ঘড়ির সুবিধা।
+                {PRODUCT_INFO.subTagline}
               </p>
 
               {/* Price Display */}
-              <div className="pt-1">
+              <div className="pt-0.5 sm:pt-1">
                 <div className="flex items-baseline justify-center lg:justify-start gap-3">
                   <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0068FF]">
                     ৳{toBanglaNumber(PRODUCT_INFO.basePrice)}
@@ -114,8 +114,8 @@ export const OfferSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Buttons: Compact 'এখনই অর্ডার করুন' + 'হোয়াটসঅ্যাপে মেসেজ দিন' */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
+              {/* Action Buttons: Clear & prominent text */}
+              <div className="pt-1.5 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
                 <button
                   type="button"
                   onClick={scrollToOrder}
@@ -137,13 +137,13 @@ export const OfferSection: React.FC = () => {
               </div>
 
               {/* Trust Badges Bar */}
-              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-slate-600 font-medium">
+              <div className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-xs sm:text-sm text-slate-600 font-medium">
                 <div className="flex items-center gap-1.5">
-                  <FiTruck className="w-4 h-4 text-[#0068FF]" />
+                  <FiTruck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0068FF]" />
                   <span>সারা দেশে হোম ডেলিভারি</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <FiShield className="w-4.5 h-4.5 text-[#0068FF]" />
+                  <FiShield className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-[#0068FF]" />
                   <span>ক্যাশ অন ডেলিভারি</span>
                 </div>
               </div>
@@ -158,11 +158,11 @@ export const OfferSection: React.FC = () => {
                 style={{
                   transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
                 }}
-                className="relative w-full max-w-[390px] h-[440px] sm:h-[500px] rounded-[25px] bg-white shadow-2xl p-4 sm:p-5 flex items-center justify-center overflow-hidden will-change-transform group"
+                className="relative w-full max-w-[390px] h-[320px] sm:h-[500px] rounded-[22px] sm:rounded-[25px] bg-white shadow-2xl p-3 sm:p-5 flex items-center justify-center overflow-hidden will-change-transform group"
               >
 
                 {/* 19% Discount Badge (Sapphire-Cyan Gradient) */}
-                <div className="absolute top-3 left-3 z-30 bg-gradient-blue text-white px-3 sm:px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold shadow-md flex items-center gap-1 backdrop-blur-md">
+                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-30 bg-gradient-blue text-white px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-extrabold shadow-md flex items-center gap-1 backdrop-blur-md">
                   <span>{toBanglaNumber(PRODUCT_INFO.discountPercentage)}% ছাড়</span>
                 </div>
 
@@ -174,9 +174,9 @@ export const OfferSection: React.FC = () => {
                   className="relative z-20 w-full h-full flex items-center justify-center will-change-transform"
                 >
                   <img
-                    src={alarmClockImg}
-                    alt="২-ইন-১ ফ্যাশন ফ্যান অ্যালার্ম ক্লক"
-                    className="w-full h-full object-cover rounded-[18px] select-none pointer-events-none drop-shadow-md"
+                    src={tableClockHolderImg}
+                    alt="৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প"
+                    className="w-full h-full object-cover rounded-[16px] sm:rounded-[18px] select-none pointer-events-none drop-shadow-md"
                     loading="eager"
                     fetchPriority="high"
                     draggable={false}

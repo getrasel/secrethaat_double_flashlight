@@ -27,12 +27,12 @@ export const FinalCTA: React.FC = () => {
 
           {/* Pure White Headline */}
           <h2 style={{ color: '#FFFFFF' }} className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight drop-shadow-xs">
-            আপনার পড়ার বা অফিস ডেস্ককে<br className="hidden sm:inline" />
-            আরও সুন্দর ও আরামদায়ক করুন
+            সৌন্দর্য ও সুবিধা—<br className="hidden sm:inline" />
+            দুটিই একসাথে
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-blue-50 max-w-xl mx-auto leading-relaxed">
-            ঘড়ি, অ্যালার্ম ও মিনি ফ্যান—প্রয়োজনীয় তিনটি সুবিধা একসাথে। পড়ার টেবিল কিংবা অফিসের ব্যস্ত ডেস্কে নিয়ে আসুন স্বস্তি ও নান্দনিকতা।
+            টেবিল ল্যাম্প, অ্যানালগ ঘড়ি ও পেন হোল্ডার—প্রয়োজনীয় তিনটি সুবিধা একসাথে। পড়ার টেবিল কিংবা ঘরের কর্নারে নিয়ে আসুন নান্দনিক সৌন্দর্য ও পরিপাটি পরিবেশ।
           </p>
 
           {/* CTA Button with White Background (Only text, no price) */}

@@ -22,14 +22,14 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-6 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-gradient-blue text-white flex items-center justify-center font-latin font-extrabold text-base shadow-sm">
-                2in1
+                3in1
               </div>
               <span className="font-latin text-lg font-bold tracking-tight text-white">
-                2-in-1 Fashion Fan Alarm Clock
+                3-in-1 Cute Cartoon Theme Table Lamp
               </span>
             </div>
             <p className="text-sm sm:text-base text-slate-300 max-w-md leading-relaxed">
-              {PRODUCT_INFO.nameBangla}। পড়ার টেবিল, অফিস ডেস্ক কিংবা বেডসাইডের সৌন্দর্য বাড়াতে এবং গরমে প্রশান্তির বাতাস পেতে একটি প্রিমিয়াম সমাধান।
+              {PRODUCT_INFO.nameBangla}। বাচ্চার পড়ার টেবিল, অফিস ডেস্ক কিংবা বেডসাইডের সৌন্দর্য বাড়াতে এবং প্রয়োজনীয় জিনিস গুছিয়ে রাখতে একটি প্রিমিয়াম সমাধান।
             </p>
 
             {/* WhatsApp Direct Contact Badge (Rich Solid Green) */}

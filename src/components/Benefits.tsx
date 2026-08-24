@@ -1,11 +1,12 @@
 import React from 'react';
 import {
   FiLayers,
-  FiBatteryCharging,
-  FiWind,
+  FiZap,
   FiClock,
   FiStar,
-  FiGift
+  FiGift,
+  FiHome,
+  FiEdit3
 } from 'react-icons/fi';
 import { PRODUCT_BENEFITS } from '../data/productData';
 import shapeSpiral from '../assets/images/shape/1.png';
@@ -14,30 +15,35 @@ import shapeSparkle from '../assets/images/shape/2.png';
 export const Benefits: React.FC = () => {
   const getBenefitIcon = (iconName: string) => {
     switch (iconName) {
-      case 'dual':
+      case 'sparkles':
         return {
-          icon: <FiLayers className="w-7 h-7 text-[#0068FF]" />,
+          icon: <FiStar className="w-7 h-7 text-[#D97706]" />,
+          bg: 'bg-amber-50/90 text-[#D97706] border-amber-100',
+        };
+      case 'lamp':
+        return {
+          icon: <FiZap className="w-7 h-7 text-[#0068FF]" />,
           bg: 'bg-blue-50/90 text-[#0068FF] border-blue-100',
-        };
-      case 'battery':
-        return {
-          icon: <FiBatteryCharging className="w-7 h-7 text-[#0284C7]" />,
-          bg: 'bg-sky-50/90 text-[#0284C7] border-sky-100',
-        };
-      case 'wind':
-        return {
-          icon: <FiWind className="w-7 h-7 text-[#06B6D4]" />,
-          bg: 'bg-cyan-50/90 text-[#06B6D4] border-cyan-100',
         };
       case 'clock':
         return {
           icon: <FiClock className="w-7 h-7 text-[#4F46E5]" />,
           bg: 'bg-indigo-50/90 text-[#4F46E5] border-indigo-100',
         };
-      case 'sparkles':
+      case 'holder':
         return {
-          icon: <FiStar className="w-7 h-7 text-[#D97706]" />,
-          bg: 'bg-amber-50/90 text-[#D97706] border-amber-100',
+          icon: <FiEdit3 className="w-7 h-7 text-[#0284C7]" />,
+          bg: 'bg-sky-50/90 text-[#0284C7] border-sky-100',
+        };
+      case 'multipurpose':
+        return {
+          icon: <FiLayers className="w-7 h-7 text-[#0068FF]" />,
+          bg: 'bg-blue-50/90 text-[#0068FF] border-blue-100',
+        };
+      case 'home':
+        return {
+          icon: <FiHome className="w-7 h-7 text-[#06B6D4]" />,
+          bg: 'bg-cyan-50/90 text-[#06B6D4] border-cyan-100',
         };
       case 'gift':
         return {

@@ -20,7 +20,7 @@ import shapeSpiral from '../assets/images/shape/1.png';
 import shapeSparkle from '../assets/images/shape/2.png';
 
 export const OrderSection: React.FC = () => {
-  const [selectedColor, setSelectedColor] = useState<string>('pink');
+  const [selectedColor, setSelectedColor] = useState<string>('yellow');
   const [quantity, setQuantity] = useState<number>(1);
   const [deliveryArea, setDeliveryArea] = useState<'dhaka' | 'outside'>('dhaka');
 
@@ -390,8 +390,8 @@ export const OrderSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
 
                 {/* Field: Full Name */}
-                <div className="space-y-2">
-                  <label htmlFor="customer-name" className="block text-sm sm:text-base font-bold text-slate-800">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <label htmlFor="customer-name" className="block text-xs sm:text-base font-bold text-slate-800">
                     আপনার নাম <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -401,7 +401,7 @@ export const OrderSection: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="আপনার নাম লিখুন"
-                    className={`w-full px-4.5 py-3.5 rounded-2xl bg-white border text-base text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all ${errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                    className={`w-full px-3.5 sm:px-4.5 py-3 sm:py-3.5 rounded-2xl bg-white border text-sm sm:text-base text-slate-900 placeholder:text-xs sm:placeholder:text-base placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all ${errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
                       }`}
                   />
                   {errors.name && (
@@ -413,8 +413,8 @@ export const OrderSection: React.FC = () => {
                 </div>
 
                 {/* Field: Phone Number */}
-                <div className="space-y-2">
-                  <label htmlFor="customer-phone" className="block text-sm sm:text-base font-bold text-slate-800">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <label htmlFor="customer-phone" className="block text-xs sm:text-base font-bold text-slate-800">
                     মোবাইল নম্বর <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -424,7 +424,7 @@ export const OrderSection: React.FC = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="আপনার ১১ ডিজিটের মোবাইল নম্বর লিখুন"
-                    className={`w-full px-4.5 py-3.5 rounded-2xl bg-white border text-base text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all ${errors.phone ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                    className={`w-full px-3.5 sm:px-4.5 py-3 sm:py-3.5 rounded-2xl bg-white border text-sm sm:text-base text-slate-900 placeholder:text-xs sm:placeholder:text-base placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all ${errors.phone ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
                       }`}
                   />
                   {errors.phone && (
@@ -436,8 +436,8 @@ export const OrderSection: React.FC = () => {
                 </div>
 
                 {/* Field: Full Address */}
-                <div className="space-y-2">
-                  <label htmlFor="customer-address" className="block text-sm sm:text-base font-bold text-slate-800">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <label htmlFor="customer-address" className="block text-xs sm:text-base font-bold text-slate-800">
                     সম্পূর্ণ ঠিকানা <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -447,7 +447,7 @@ export const OrderSection: React.FC = () => {
                     value={formData.address}
                     onChange={handleInputChange}
                     placeholder="জেলা, থানা, রোড নম্বর ও বাসার সম্পূর্ণ ঠিকানা লিখুন"
-                    className={`w-full px-4.5 py-3.5 rounded-2xl bg-white border text-base text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all resize-none ${errors.address ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                    className={`w-full px-3.5 sm:px-4.5 py-3 sm:py-3.5 rounded-2xl bg-white border text-sm sm:text-base text-slate-900 placeholder:text-xs sm:placeholder:text-base placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#0068FF] transition-all resize-none ${errors.address ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
                       }`}
                   />
                   {errors.address && (

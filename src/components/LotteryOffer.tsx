@@ -15,7 +15,7 @@ export const LotteryOffer: React.FC = () => {
   };
 
   return (
-    <section id="lottery-offer" className="relative overflow-hidden py-16 sm:py-20 md:py-24 bg-white border-t border-slate-100">
+    <section id="lottery-offer" className="relative overflow-hidden py-10 sm:py-20 md:py-24 bg-white border-t border-slate-100">
       
       {/* Decorative Background Shapes */}
       <div className="hidden sm:block absolute -top-10 -left-12 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-50 z-0">
@@ -35,74 +35,74 @@ export const LotteryOffer: React.FC = () => {
         {/* Main Showcase Banner Card with Sapphire-Cyan Accent */}
         <div 
           style={{ background: 'linear-gradient(135deg, #eef5ff 0%, #e2eeff 50%, #d8e9ff 100%)' }}
-          className="relative rounded-3xl sm:rounded-[32px] p-6 sm:p-10 md:p-12 border border-blue-200/80 shadow-md overflow-hidden"
+          className="relative rounded-2xl sm:rounded-[32px] p-4 sm:p-10 md:p-12 border border-blue-200/80 shadow-md overflow-hidden"
         >
 
           {/* Ambient Glows */}
           <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-[#0068FF]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-[#06B6D4]/15 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-3.5 sm:space-y-5 text-center lg:text-left">
               
               {/* Top Tag */}
-              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white border border-blue-200 text-xs sm:text-sm font-bold text-[#0068FF] shadow-2xs">
-                <FiGift className="w-4 h-4 text-[#0068FF]" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white border border-blue-200 text-xs sm:text-sm font-bold text-[#0068FF] shadow-2xs">
+                <FiGift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0068FF]" />
                 <span>বিশেষ মেগা ক্যাম্পেইন ও মেগা অফার</span>
               </div>
 
-              {/* Main Heading */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 tracking-tight leading-[1.25]">
-                অর্ডার করলেই পাচ্ছেন ফ্রি লটারি, <br />
-                <span className="bg-[linear-gradient(90deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] bg-clip-text text-transparent">
+              {/* Main Heading (Prominent & Clean 2 Lines) */}
+              <h2 className="text-[21px] sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 tracking-tight leading-[1.25]">
+                <span className="inline-block">অর্ডার করলেই পাচ্ছেন ফ্রি লটারি,</span><br />
+                <span className="inline-block bg-[linear-gradient(90deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] bg-clip-text text-transparent">
                   জিতে নিন স্বপ্নের আকর্ষণীয় বাইক!
                 </span>
               </h2>
 
               {/* Description */}
-              <p className="text-sm sm:text-base lg:text-lg text-slate-700 leading-relaxed font-medium">
-                ২-ইন-১ ফ্যাশন ফ্যান ক্লক অর্ডার করলেই প্রতিটি অর্ডারের সাথে নিশ্চিতভাবে পেয়ে যাবেন ১টি ইউনিক মেগা লটারি কুপন। লাকি ড্র-এর মাধ্যমে বিজয়ী পাবেন আকর্ষণীয় নতুন বাইক!
+              <p className="text-xs sm:text-base lg:text-lg text-slate-700 leading-normal sm:leading-relaxed font-medium">
+                ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প অর্ডার করলেই প্রতিটি অর্ডারের সাথে নিশ্চিতভাবে পেয়ে যাবেন ১টি ইউনিক মেগা লটারি কুপন। লাকি ড্র-এর মাধ্যমে বিজয়ী পাবেন আকর্ষণীয় নতুন বাইক!
               </p>
 
               {/* 3 Step Simple Process */}
-              <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
+              <div className="pt-1 sm:pt-2 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5 text-left">
                 
-                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-blue-100 shadow-2xs">
-                  <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0068FF] font-extrabold text-xs flex items-center justify-center mb-2">
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-2xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-blue-50 text-[#0068FF] font-extrabold text-xs flex items-center justify-center mb-1.5 sm:mb-2">
                     ১
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 mb-1">অর্ডার সম্পন্ন করুন</h4>
-                  <p className="text-xs text-slate-600">পছন্দের কালার সিলেক্ট করে অর্ডার কনফার্ম করুন</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-0.5 sm:mb-1">অর্ডার সম্পন্ন করুন</h4>
+                  <p className="text-[11px] sm:text-xs text-slate-600">পছন্দের কালার সিলেক্ট করে অর্ডার কনফার্ম করুন</p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-blue-100 shadow-2xs">
-                  <div className="w-8 h-8 rounded-xl bg-sky-50 text-[#0284C7] font-extrabold text-xs flex items-center justify-center mb-2">
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-2xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-sky-50 text-[#0284C7] font-extrabold text-xs flex items-center justify-center mb-1.5 sm:mb-2">
                     ২
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 mb-1">লটারি কুপন পান</h4>
-                  <p className="text-xs text-slate-600">অর্ডারের সাথে নিশ্চিত ডিজিটাল কুপন নম্বর বুঝে নিন</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-0.5 sm:mb-1">লটারি কুপন পান</h4>
+                  <p className="text-[11px] sm:text-xs text-slate-600">অর্ডারের সাথে নিশ্চিত ডিজিটাল কুপন নম্বর বুঝে নিন</p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-blue-100 shadow-2xs">
-                  <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 font-extrabold text-xs flex items-center justify-center mb-2">
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-blue-100 shadow-2xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-amber-50 text-amber-600 font-extrabold text-xs flex items-center justify-center mb-1.5 sm:mb-2">
                     ৩
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 mb-1">বাইক বিজয়ী হোন</h4>
-                  <p className="text-xs text-slate-600">মেগা লাকি ড্র-তে জিতে নিন আপনার স্বপ্নের বাইক</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-0.5 sm:mb-1">বাইক বিজয়ী হোন</h4>
+                  <p className="text-[11px] sm:text-xs text-slate-600">মেগা লাকি ড্র-তে জিতে নিন আপনার স্বপ্নের বাইক</p>
                 </div>
 
               </div>
 
               {/* CTA Button */}
-              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+              <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
                 <button
                   type="button"
                   onClick={scrollToOrder}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-blue bg-gradient-blue-hover text-white text-sm sm:text-base font-bold py-3.5 px-6 sm:px-8 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-blue bg-gradient-blue-hover text-white text-xs sm:text-base font-bold py-3 px-5 sm:py-3.5 sm:px-8 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer"
                 >
-                  <FiShoppingBag className="w-4.5 h-4.5 text-white" />
+                  <FiShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                   <span>এখনই অর্ডার করে কুপন বুঝে নিন</span>
                 </button>
               </div>

@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 export const WhatsAppButton: React.FC = () => {
   const phoneNumber = '8801746867350';
   const displayPhone = '+8801746867350';
-  const message = 'হ্যালো, আমি ২-ইন-১ ফ্যাশন ফ্যান অ্যালার্ম ক্লক সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই।';
+  const message = 'হ্যালো, আমি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই।';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
