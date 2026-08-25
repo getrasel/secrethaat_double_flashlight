@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   FiCheckCircle,
   FiShoppingBag,
@@ -20,6 +21,7 @@ import shapeSpiral from '../assets/images/shape/1.png';
 import shapeSparkle from '../assets/images/shape/2.png';
 
 export const OrderSection: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState<string>('yellow');
   const [quantity, setQuantity] = useState<number>(1);
   const [deliveryArea, setDeliveryArea] = useState<'dhaka' | 'outside'>('dhaka');
@@ -100,6 +102,15 @@ export const OrderSection: React.FC = () => {
 
       setSubmittedOrder(orderPayload);
       setIsSubmitted(true);
+
+      navigate('/thank-you', {
+        state: {
+          order: orderPayload,
+          grandTotal,
+          deliveryFee: deliveryCharge,
+          subtotal: itemsTotal,
+        },
+      });
     }
   };
 
