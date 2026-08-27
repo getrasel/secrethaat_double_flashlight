@@ -20,6 +20,8 @@ import type { OrderState } from '../types';
 import shapeSpiral from '../assets/images/shape/1.png';
 import shapeSparkle from '../assets/images/shape/2.png';
 
+import { createSupabaseOrder } from '../utils/orderStorage';
+
 export const OrderSection: React.FC = () => {
   const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState<string>('yellow');
@@ -34,8 +36,9 @@ export const OrderSection: React.FC = () => {
     notes: '',
   });
 
-  // Validation State
+  // Validation & Submit State
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [submittedOrder, setSubmittedOrder] = useState<OrderState | null>(null);
 
@@ -86,10 +89,12 @@ export const OrderSection: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
+    if (validateForm() && !isSubmitting) {
+      setIsSubmitting(true);
+      const fallbackId = Math.floor(10000 + Math.random() * 90000);
       const orderPayload: OrderState = {
         selectedColor: currentColor.name,
         quantity,
@@ -100,12 +105,31 @@ export const OrderSection: React.FC = () => {
         notes: formData.notes.trim() || undefined,
       };
 
+      // Store in Supabase
+      const { data: createdOrder } = await createSupabaseOrder({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        address: formData.address.trim(),
+        product: PRODUCT_INFO.name,
+        color: currentColor.name,
+        quantity,
+        price: unitPrice,
+        shipping_amount: deliveryCharge,
+        total_amount: grandTotal,
+        status: 'pending',
+        notes: formData.notes.trim() || undefined,
+      });
+
+      const finalOrderId = createdOrder?.id ? `SH-${createdOrder.id}` : `SH-${fallbackId}`;
+
       setSubmittedOrder(orderPayload);
       setIsSubmitted(true);
+      setIsSubmitting(false);
 
       navigate('/thank-you', {
         state: {
           order: orderPayload,
+          orderNumber: finalOrderId,
           grandTotal,
           deliveryFee: deliveryCharge,
           subtotal: itemsTotal,
@@ -483,10 +507,20 @@ export const OrderSection: React.FC = () => {
                 {/* Primary CTA Submit Button (Styled with #0068ff Gradient - Sleeker & Compact) */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-blue bg-gradient-blue-hover text-white text-sm sm:text-base font-bold py-3.5 sm:py-4 px-5 sm:px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-2 cursor-pointer mt-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-blue bg-gradient-blue-hover disabled:opacity-75 disabled:cursor-not-allowed text-white text-sm sm:text-base font-bold py-3.5 sm:py-4 px-5 sm:px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-2 cursor-pointer mt-2"
                 >
-                  <FiShoppingBag className="w-5 h-5 text-white shrink-0" />
-                  <span>অর্ডার কনফার্ম করুন — ৳{toBanglaNumber(grandTotal)}</span>
+                  {isSubmitting ? (
+                    <>
+                      <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
+                      <span>অর্ডার সাবমিট হচ্ছে...</span>
+                    </>
+                  ) : (
+                    <>
+                      <FiShoppingBag className="w-5 h-5 text-white shrink-0" />
+                      <span>অর্ডার কনফার্ম করুন — ৳{toBanglaNumber(grandTotal)}</span>
+                    </>
+                  )}
                 </button>
 
               </form>

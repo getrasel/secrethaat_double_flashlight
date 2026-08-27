@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiShield, FiTruck } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiShield, FiTruck, FiLock } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { PRODUCT_INFO } from '../data/productData';
 
@@ -62,13 +63,21 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Copyright & Back to Top */}
+        {/* Bottom Copyright & Admin Access */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
           <p>
             © {new Date().getFullYear()} {PRODUCT_INFO.name}. সর্বস্বত্ব সংরক্ষিত।
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5 sm:gap-6">
+            <Link
+              to="/admin"
+              className="text-xs text-slate-500 hover:text-slate-300 flex items-center gap-1 transition-colors"
+            >
+              <FiLock className="w-3.5 h-3.5" />
+              <span>অ্যাডমিন প্যানেল</span>
+            </Link>
+
             <button
               type="button"
               onClick={scrollToTop}

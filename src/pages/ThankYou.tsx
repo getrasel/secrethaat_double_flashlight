@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import {
   FiCheckCircle,
@@ -24,16 +24,14 @@ export const ThankYou: React.FC = () => {
   const location = useLocation();
   const state = location.state as {
     order?: OrderState;
+    orderNumber?: string;
     grandTotal?: number;
     deliveryFee?: number;
     subtotal?: number;
   } | null;
 
-  // Generate a stable order reference code for demonstration
-  const orderNumber = useMemo(() => {
-    const randomDigits = Math.floor(10000 + Math.random() * 90000);
-    return `SH-${randomDigits}`;
-  }, []);
+  const [fallbackOrderNumber] = useState(() => `SH-${Math.floor(10000 + Math.random() * 90000)}`);
+  const orderNumber = state?.orderNumber || fallbackOrderNumber;
 
   const order = state?.order;
   const grandTotal =
