@@ -9,8 +9,8 @@ import {
   FiClock,
 } from "react-icons/fi";
 import { PRODUCT_INFO, toBanglaNumber } from "../data/productData";
-import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.jpg";
-import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.jpg";
+import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.webp";
+import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.webp";
 
 export const Hero: React.FC = () => {
   const scrollToOrder = () => {

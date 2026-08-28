@@ -10,7 +10,7 @@ import {
   FiStar,
   FiEdit3,
 } from "react-icons/fi";
-import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.jpg";
+import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.webp";
 import shapeSpiral from "../assets/images/shape/1.png";
 import shapeSparkle from "../assets/images/shape/2.png";
 
