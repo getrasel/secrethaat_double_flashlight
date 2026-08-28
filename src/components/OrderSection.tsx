@@ -305,7 +305,7 @@ export const OrderSection: React.FC = () => {
               {/* Delivery Area Selection inside Summary Card */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <label className="block text-sm sm:text-base font-bold text-white flex items-center gap-1.5">
+                  <label className="text-sm sm:text-base font-bold text-white flex items-center gap-1.5">
                     <FiTruck className="w-4.5 h-4.5 text-cyan-200" />
                     <span>
                       ডেলিভারি এলাকা নির্বাচন করুন{" "}
@@ -338,7 +338,7 @@ export const OrderSection: React.FC = () => {
                         }`}
                       >
                         {deliveryArea === "dhaka" && (
-                          <FiCheck className="w-3.5 h-3.5 stroke-[3]" />
+                          <FiCheck className="w-3.5 h-3.5 stroke-3" />
                         )}
                       </div>
                       <div>
@@ -385,7 +385,7 @@ export const OrderSection: React.FC = () => {
                         }`}
                       >
                         {deliveryArea === "outside" && (
-                          <FiCheck className="w-3.5 h-3.5 stroke-[3]" />
+                          <FiCheck className="w-3.5 h-3.5 stroke-3" />
                         )}
                       </div>
                       <div>
@@ -644,7 +644,7 @@ export const OrderSection: React.FC = () => {
                   <span className="text-slate-500 font-medium shrink-0">
                     নাম:
                   </span>
-                  <span className="font-bold text-slate-900 break-words text-left sm:text-right">
+                  <span className="font-bold text-slate-900 wrap-break-word text-left sm:text-right">
                     {submittedOrder.customerName}
                   </span>
                 </div>
@@ -664,7 +664,7 @@ export const OrderSection: React.FC = () => {
                   <span className="text-slate-500 font-medium">
                     সম্পূর্ণ ঠিকানা:
                   </span>
-                  <div className="font-semibold text-slate-900 text-left bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/90 break-words leading-relaxed text-xs sm:text-sm">
+                  <div className="font-semibold text-slate-900 text-left bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/90 wrap-break-word leading-relaxed text-xs sm:text-sm">
                     {submittedOrder.fullAddress}
                   </div>
                 </div>
