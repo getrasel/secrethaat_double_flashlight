@@ -34,10 +34,10 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-zinc-100/70 via-[#FAFAFA] to-[#FAFAFA]">
+    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-linear-to-b from-zinc-100/70 via-[#FAFAFA] to-[#FAFAFA]">
       {/* Subtle Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-sky-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-pink-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-137.5 h-137.5 bg-sky-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-87.5 h-87.5 bg-pink-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-zinc-950 tracking-tight leading-[1.2]">
               আপনার টেবিলকে রাখুন
               <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 via-zinc-800 to-zinc-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-950 via-zinc-800 to-zinc-600">
                 সুন্দর ও গোছানো।
               </span>
             </h1>
@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
           {/* Right Column: Hero Product Showcase Composition */}
           <div className="lg:col-span-5 relative flex justify-center">
             {/* Main Product Showcase Card */}
-            <div className="relative w-full max-w-[420px] rounded-3xl bg-white p-3 sm:p-4 border border-zinc-200 shadow-xl card-hover">
+            <div className="relative w-full max-w-105 rounded-3xl bg-white p-3 sm:p-4 border border-zinc-200 shadow-xl card-hover">
               {/* Product Visual Container */}
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-zinc-50 flex items-center justify-center">
                 <img
@@ -177,7 +177,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Subtle Floating Accessory Pill (Healis style) */}
-            <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-3 rounded-2xl shadow-lg items-center gap-3 max-w-[210px]">
+            <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-3 rounded-2xl shadow-lg items-center gap-3 max-w-52.5">
               <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-zinc-100">
                 <img
                   src={tableClockImg}

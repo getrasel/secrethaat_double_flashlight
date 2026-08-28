@@ -15,7 +15,6 @@ export interface Order {
   shipping_amount: number;
   total_amount: number;
   status: string;
-  notes?: string;
 }
 
 export interface CreateOrderInput {
@@ -29,7 +28,6 @@ export interface CreateOrderInput {
   shipping_amount: number;
   total_amount: number;
   status?: string;
-  notes?: string;
 }
 
 /**
@@ -55,7 +53,7 @@ export const fetchOrdersFromSupabase = async (): Promise<{
  * Create an order directly in Supabase (table: rasel_order)
  */
 export const createSupabaseOrder = async (
-  input: CreateOrderInput
+  input: CreateOrderInput,
 ): Promise<{ data: Order | null; error: any }> => {
   try {
     const { data, error } = await supabase
@@ -72,7 +70,6 @@ export const createSupabaseOrder = async (
           shipping_amount: input.shipping_amount,
           total_amount: input.total_amount,
           status: input.status || "pending",
-          notes: input.notes || null,
         },
       ])
       .select();
@@ -89,7 +86,7 @@ export const createSupabaseOrder = async (
  */
 export const updateSupabaseOrderStatus = async (
   orderId: number | string,
-  newStatus: string
+  newStatus: string,
 ): Promise<{ error: any }> => {
   try {
     const { error } = await supabase
@@ -107,7 +104,7 @@ export const updateSupabaseOrderStatus = async (
  * Delete an order directly from Supabase (table: rasel_order)
  */
 export const deleteSupabaseOrder = async (
-  orderId: number | string
+  orderId: number | string,
 ): Promise<{ error: any }> => {
   try {
     const { error } = await supabase

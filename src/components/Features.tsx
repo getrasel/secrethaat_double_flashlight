@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FiCheckCircle,
   FiZap,
@@ -8,16 +8,18 @@ import {
   FiCompass,
   FiLayers,
   FiStar,
-  FiEdit3
-} from 'react-icons/fi';
-import tableClockImg from '../assets/images/3inone_table_lamp/table_clock.jpg';
-import shapeSpiral from '../assets/images/shape/1.png';
-import shapeSparkle from '../assets/images/shape/2.png';
+  FiEdit3,
+} from "react-icons/fi";
+import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.jpg";
+import shapeSpiral from "../assets/images/shape/1.png";
+import shapeSparkle from "../assets/images/shape/2.png";
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="relative overflow-hidden py-16 md:py-24 bg-white border-b border-slate-100">
-      
+    <section
+      id="features"
+      className="relative overflow-hidden py-16 md:py-24 bg-white border-b border-slate-100"
+    >
       {/* Decorative Background Shapes */}
       <div className="hidden sm:block absolute -bottom-10 -left-12 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-55 z-0">
         <img
@@ -28,11 +30,14 @@ export const Features: React.FC = () => {
       </div>
 
       <div className="absolute top-10 left-12 w-12 sm:w-16 h-12 sm:h-16 pointer-events-none opacity-80 z-0">
-        <img src={shapeSparkle} alt="" className="w-full h-full object-contain" />
+        <img
+          src={shapeSparkle}
+          alt=""
+          className="w-full h-full object-contain"
+        />
       </div>
 
       <div className="container-custom relative z-10">
-
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <span className="inline-block text-sm font-bold uppercase tracking-wider text-[#0068FF] bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-4 sm:mb-5">
@@ -48,15 +53,14 @@ export const Features: React.FC = () => {
 
         {/* 2-Column Specs Layout (Full Height Stretched Alignment) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-
           {/* Left Column: Full-Height Visual Backside Card */}
           <div className="lg:col-span-5 flex flex-col h-full">
             <div className="relative rounded-3xl overflow-hidden bg-slate-50 border border-slate-200/90 shadow-sm p-4 sm:p-6 flex flex-col justify-between h-full">
-              <div className="flex-1 flex items-center justify-center rounded-2xl overflow-hidden bg-white border border-slate-100 p-3 sm:p-4 min-h-[320px] sm:min-h-[400px] lg:min-h-[460px]">
+              <div className="flex-1 flex items-center justify-center rounded-2xl overflow-hidden bg-white border border-slate-100 p-3 sm:p-4 min-h-80 sm:min-h-100 lg:min-h-115">
                 <img
                   src={tableClockImg}
                   alt="৩-ইন-১ কার্টুন টেবিল ল্যাম্প গঠন"
-                  className="w-full h-full object-contain rounded-xl max-h-[500px]"
+                  className="w-full h-full object-contain rounded-xl max-h-125"
                   loading="lazy"
                 />
               </div>
@@ -71,7 +75,9 @@ export const Features: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-base sm:text-lg text-blue-50 leading-relaxed font-normal">
-                  ল্যাম্পের জন্য রয়েছে ফ্লেক্সিবল নেক ডিজাইন এবং ঘড়ির পেছনে রয়েছে সহজ টাইম সেটিং নব। যেকোনো বয়সের মানুষ বা শিশুরা অনায়াসে পরিচালনা করতে পারবে।
+                  ল্যাম্পের জন্য রয়েছে ফ্লেক্সিবল নেক ডিজাইন এবং ঘড়ির পেছনে
+                  রয়েছে সহজ টাইম সেটিং নব। যেকোনো বয়সের মানুষ বা শিশুরা অনায়াসে
+                  পরিচালনা করতে পারবে।
                 </p>
               </div>
             </div>
@@ -79,9 +85,7 @@ export const Features: React.FC = () => {
 
           {/* Right Column: Specification Grid */}
           <div className="lg:col-span-7 space-y-4">
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
               {/* Spec Item: Product Name */}
               <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-200 transition-colors">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#0068FF] font-semibold mb-1.5">
@@ -122,7 +126,9 @@ export const Features: React.FC = () => {
                   <span>ল্যাম্পের ধরন</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  <span className="font-latin">Moon Shape Flexible LED Light</span>
+                  <span className="font-latin">
+                    Moon Shape Flexible LED Light
+                  </span>
                 </p>
               </div>
 
@@ -133,7 +139,8 @@ export const Features: React.FC = () => {
                   <span>ঘড়ির ধরন</span>
                 </div>
                 <p className="text-base font-bold text-slate-900">
-                  <span className="font-latin">Quartz</span> ব্যাটারি চালিত অ্যানালগ ঘড়ি
+                  <span className="font-latin">Quartz</span> ব্যাটারি চালিত
+                  অ্যানালগ ঘড়ি
                 </p>
               </div>
 
@@ -194,17 +201,14 @@ export const Features: React.FC = () => {
                     প্যাকেজে যা থাকছে
                   </span>
                   <p className="text-base sm:text-lg font-extrabold text-white">
-                    ১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প (LED লাইট, অ্যানালগ ঘড়ি ও পেন হোল্ডারসহ)
+                    ১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প (LED লাইট,
+                    অ্যানালগ ঘড়ি ও পেন হোল্ডারসহ)
                   </p>
                 </div>
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
