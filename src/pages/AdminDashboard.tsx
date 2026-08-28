@@ -146,9 +146,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       product: "3-in-1 Cute Cartoon Theme Table Lamp",
       color: randomSuffix % 2 === 0 ? "কিউট ইয়েলো" : "কিউট অরেঞ্জ",
       quantity: 1,
-      price: 990,
+      price: 890,
       shipping_amount: 70,
-      total_amount: 1060,
+      total_amount: 960,
       status: "pending",
     };
 

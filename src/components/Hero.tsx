@@ -1,25 +1,35 @@
-import React from 'react';
-import { FiArrowDown, FiShield, FiTruck, FiCheck, FiZap, FiSmile, FiClock } from 'react-icons/fi';
-import { PRODUCT_INFO, toBanglaNumber } from '../data/productData';
-import tableClockHolderImg from '../assets/images/3inone_table_lamp/table_clock_holder.jpg';
-import tableClockImg from '../assets/images/3inone_table_lamp/table_clock.jpg';
+import React from "react";
+import {
+  FiArrowDown,
+  FiShield,
+  FiTruck,
+  FiCheck,
+  FiZap,
+  FiSmile,
+  FiClock,
+} from "react-icons/fi";
+import { PRODUCT_INFO, toBanglaNumber } from "../data/productData";
+import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.jpg";
+import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.jpg";
 
 export const Hero: React.FC = () => {
   const scrollToOrder = () => {
-    const element = document.getElementById('order-section');
+    const element = document.getElementById("order-section");
     if (element) {
       const yOffset = -70;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   const scrollToBenefits = () => {
-    const element = document.getElementById('benefits');
+    const element = document.getElementById("benefits");
     if (element) {
       const yOffset = -70;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -31,10 +41,8 @@ export const Hero: React.FC = () => {
 
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-
           {/* Left Column: Hero Copy & Value Proposition */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-
             {/* Minimal Eyebrow Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200 text-xs font-semibold text-zinc-800 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-subtle" />
@@ -43,7 +51,8 @@ export const Hero: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-zinc-950 tracking-tight leading-[1.2]">
-              আপনার টেবিলকে রাখুন<br className="hidden sm:inline" />
+              আপনার টেবিলকে রাখুন
+              <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 via-zinc-800 to-zinc-600">
                 সুন্দর ও গোছানো।
               </span>
@@ -51,7 +60,10 @@ export const Hero: React.FC = () => {
 
             {/* Supporting Subtitle */}
             <p className="text-base sm:text-lg text-zinc-600 max-w-xl leading-relaxed">
-              <strong className="text-zinc-900 font-semibold">{PRODUCT_INFO.nameBangla}</strong>। {PRODUCT_INFO.subTagline}
+              <strong className="text-zinc-900 font-semibold">
+                {PRODUCT_INFO.nameBangla}
+              </strong>
+              । {PRODUCT_INFO.subTagline}
             </p>
 
             {/* Core Feature Highlights Pills */}
@@ -105,15 +117,12 @@ export const Hero: React.FC = () => {
                 <span>১০০% কোয়ালিটি চেকড</span>
               </div>
             </div>
-
           </div>
 
           {/* Right Column: Hero Product Showcase Composition */}
           <div className="lg:col-span-5 relative flex justify-center">
-
             {/* Main Product Showcase Card */}
             <div className="relative w-full max-w-[420px] rounded-3xl bg-white p-3 sm:p-4 border border-zinc-200 shadow-xl card-hover">
-
               {/* Product Visual Container */}
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-zinc-50 flex items-center justify-center">
                 <img
@@ -126,8 +135,12 @@ export const Hero: React.FC = () => {
 
                 {/* Floating Overlay Badge: Price & Savings */}
                 <div className="absolute top-3 left-3 bg-zinc-900/95 backdrop-blur-md text-white px-3 py-1.5 rounded-xl text-xs font-bold shadow-md flex items-center gap-2">
-                  <span className="text-xs text-zinc-400 line-through">৳{toBanglaNumber(PRODUCT_INFO.regularPrice)}</span>
-                  <span className="text-sm text-emerald-400 font-extrabold">৳{toBanglaNumber(PRODUCT_INFO.basePrice)}</span>
+                  <span className="text-xs text-zinc-400 line-through">
+                    ৳{toBanglaNumber(PRODUCT_INFO.regularPrice)}
+                  </span>
+                  <span className="text-sm text-emerald-400 font-extrabold">
+                    ৳{toBanglaNumber(PRODUCT_INFO.basePrice)}
+                  </span>
                   <span className="text-[10px] bg-emerald-400 text-zinc-950 font-extrabold px-1.5 py-0.5 rounded-md">
                     {toBanglaNumber(PRODUCT_INFO.discountPercentage)}% ছাড়
                   </span>
@@ -151,26 +164,37 @@ export const Hero: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex -space-x-1.5 overflow-hidden">
-                  <span className="inline-block w-4.5 h-4.5 rounded-full bg-amber-400 border-2 border-white shadow-xs" title="Cute Yellow (কিউট ইয়েলো)" />
-                  <span className="inline-block w-4.5 h-4.5 rounded-full bg-orange-400 border-2 border-white shadow-xs" title="Cute Orange (কিউট অরেঞ্জ)" />
+                  <span
+                    className="inline-block w-4.5 h-4.5 rounded-full bg-amber-400 border-2 border-white shadow-xs"
+                    title="Cute Yellow (কিউট ইয়েলো)"
+                  />
+                  <span
+                    className="inline-block w-4.5 h-4.5 rounded-full bg-orange-400 border-2 border-white shadow-xs"
+                    title="Cute Orange (কিউট অরেঞ্জ)"
+                  />
                 </div>
               </div>
-
             </div>
 
             {/* Subtle Floating Accessory Pill (Healis style) */}
             <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-3 rounded-2xl shadow-lg items-center gap-3 max-w-[210px]">
               <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-zinc-100">
-                <img src={tableClockImg} alt="ডেস্ক ভিউ" className="w-full h-full object-cover" />
+                <img
+                  src={tableClockImg}
+                  alt="ডেস্ক ভিউ"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
-                <p className="text-[11px] font-bold text-zinc-900 leading-tight">ডেস্ক ডেকোর</p>
-                <p className="text-[10px] text-zinc-500 leading-tight">পড়ার টেবিলের সেরা সঙ্গী</p>
+                <p className="text-[11px] font-bold text-zinc-900 leading-tight">
+                  ডেস্ক ডেকোর
+                </p>
+                <p className="text-[10px] text-zinc-500 leading-tight">
+                  পড়ার টেবিলের সেরা সঙ্গী
+                </p>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

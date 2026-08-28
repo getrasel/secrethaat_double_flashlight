@@ -11,9 +11,9 @@ export const PRODUCT_INFO = {
   tagline: 'আপনার টেবিলকে রাখুন সুন্দর ও গোছানো।',
   subTagline: 'পড়ার টেবিল বা ঘরের কর্নারকে আরও সুন্দর ও গোছানো রাখতে নিয়ে এলাম ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প—ল্যাম্প, ঘড়ি ও পেন হোল্ডার একসাথে।',
   regularPrice: 1190,
-  basePrice: 990,
-  discountAmount: 200,
-  discountPercentage: 17,
+  basePrice: 890,
+  discountAmount: 300,
+  discountPercentage: 25,
   deliveryDhaka: 70,
   deliveryOutside: 130,
 };
