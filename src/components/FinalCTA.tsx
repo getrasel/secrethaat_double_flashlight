@@ -25,14 +25,19 @@ export const FinalCTA: React.FC = () => {
             স্টক সীমিত — আজই অর্ডার করুন
           </span>
 
-          {/* Pure White Headline */}
-          <h2 style={{ color: '#FFFFFF' }} className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight drop-shadow-xs">
-            সৌন্দর্য ও সুবিধা—<br className="hidden sm:inline" />
-            দুটিই একসাথে
+          {/* Pure White Headline (Strictly 2 Lines) */}
+          <h2
+            style={{ color: "#FFFFFF" }}
+            className="text-xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-white tracking-tight leading-snug sm:leading-tight drop-shadow-xs max-w-2xl mx-auto"
+          >
+            <span className="block">প্রয়োজনের সময় আলো খুঁজবেন না।</span>
+            <span className="block mt-1 sm:mt-1.5">আলো রাখুন হাতের কাছেই।</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-blue-50 max-w-xl mx-auto leading-relaxed">
-            টেবিল ল্যাম্প, অ্যানালগ ঘড়ি ও পেন হোল্ডার—প্রয়োজনীয় তিনটি সুবিধা একসাথে। পড়ার টেবিল কিংবা ঘরের কর্নারে নিয়ে আসুন নান্দনিক সৌন্দর্য ও পরিপাটি পরিবেশ।
+            ঘর, পড়াশোনা, ক্যাম্পিং কিংবা ট্রাভেলিং—প্রয়োজনের মুহূর্তে প্রস্তুত
+            থাকুক আপনার আলো। শক্তিশালী টর্চ ও চারপাশে ছড়ানো ল্যাম্প—দুটি আলোর
+            সুবিধা এক ডিভাইসে।
           </p>
 
           {/* CTA Button with White Background (Only text, no price) */}
@@ -43,7 +48,7 @@ export const FinalCTA: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-[#0068FF] text-sm sm:text-base font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl active:scale-98 cursor-pointer"
             >
               <FiShoppingBag className="w-4.5 h-4.5 text-[#0068FF] shrink-0" />
-              <span>অর্ডার করতে ক্লিক করুন</span>
+              <span>এখনই অর্ডার করুন</span>
             </button>
           </div>
 

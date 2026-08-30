@@ -143,12 +143,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       name: `গ্রাহক ${randomSuffix}`,
       phone: `017${Math.floor(10000000 + Math.random() * 90000000)}`,
       address: "হাউজ ২৫, ধানমন্ডি, ঢাকা",
-      product: "3-in-1 Cute Cartoon Theme Table Lamp",
-      color: randomSuffix % 2 === 0 ? "কিউট ইয়েলো" : "কিউট অরেঞ্জ",
+      product: "2-in-1 Rechargeable Double Light Torch & Reading Lamp",
+      color: randomSuffix % 2 === 0 ? "ক্ল্যাসিক ব্ল্যাক" : "এমারেল্ড গ্রিন",
       quantity: 1,
-      price: 890,
+      price: 720,
       shipping_amount: 70,
-      total_amount: 960,
+      total_amount: 790,
       status: "pending",
     };
 
@@ -177,7 +177,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         : total;
     const itemTotal = unitPrice * qty;
 
-    const info = `অর্ডার #${ord.id}\nনাম: ${ord.name}\nফোন: ${ord.phone}\nঠিকানা: ${ord.address}\nপণ্য: ${ord.product || "3-in-1 Cartoon Lamp"} (${ord.color || "কিউট ইয়েলো"})\nপরিমাণ: ${qty} টি\nমূল্য: ৳${unitPrice} x ${qty} = ৳${itemTotal}\nডেলিভারি: ৳${shipping}\nসর্বমোট: ৳${total}`;
+    const info = `অর্ডার #${ord.id}\nনাম: ${ord.name}\nফোন: ${ord.phone}\nঠিকানা: ${ord.address}\nপণ্য: ${ord.product || "2-in-1 Torch & Lamp"} (${ord.color || "ক্ল্যাসিক ব্ল্যাক"})\nপরিমাণ: ${qty} টি\nমূল্য: ৳${unitPrice} x ${qty} = ৳${itemTotal}\nডেলিভারি: ৳${shipping}\nসর্বমোট: ৳${total}`;
 
     navigator.clipboard.writeText(info);
     setCopiedId(ord.id);
@@ -572,7 +572,7 @@ with check (true);`}
                             {waPhone && (
                               <a
                                 href={`https://wa.me/${waPhone}?text=${encodeURIComponent(
-                                  `আসসালামু আলাইকুম ${ord.name}, 3-in-1 Cute Cartoon Theme Table Lamp অর্ডার করার জন্য ধন্যবাদ।`
+                                  `আসসালামু আলাইকুম ${ord.name}, 2-in-1 Rechargeable Double Light Torch & Reading Lamp অর্ডার করার জন্য ধন্যবাদ।`
                                 )}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -586,7 +586,7 @@ with check (true);`}
                         </td>
                         <td className="py-4 px-4">
                           <div className="font-semibold text-slate-200 text-xs">
-                            {ord.product || "3-in-1 Cartoon Lamp"}
+                            {ord.product || "2-in-1 Torch & Lamp"}
                           </div>
                           {ord.color && (
                             <span className="inline-block mt-1 text-[11px] px-2 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-indigo-300 font-medium">

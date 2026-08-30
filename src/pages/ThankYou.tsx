@@ -7,9 +7,7 @@ import {
   FiPhone,
   FiUser,
   FiTruck,
-  FiShield,
   FiArrowLeft,
-  FiPackage,
   FiCheck,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
@@ -30,7 +28,9 @@ export const ThankYou: React.FC = () => {
     subtotal?: number;
   } | null;
 
-  const [fallbackOrderNumber] = useState(() => `SH-${Math.floor(10000 + Math.random() * 90000)}`);
+  const [fallbackOrderNumber] = useState(
+    () => `SH-${Math.floor(10000 + Math.random() * 90000)}`,
+  );
   const orderNumber = state?.orderNumber || fallbackOrderNumber;
 
   const order = state?.order;
@@ -56,50 +56,50 @@ export const ThankYou: React.FC = () => {
   )}`;
 
   return (
-    <div className="py-12 md:py-20 bg-slate-50 min-h-[85vh] flex items-center justify-center">
-      <div className="container-custom max-w-3xl">
+    <div className="w-full py-6 sm:py-10 md:py-16 bg-slate-50 min-h-[calc(100vh-5rem)] flex items-center justify-center px-3 sm:px-4 box-border overflow-x-hidden">
+      <div className="w-full max-w-2xl mx-auto">
         {/* Success Header Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xl shadow-blue-500/5 text-center relative overflow-hidden">
+        <div className="w-full bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 border border-slate-200/90 shadow-xl shadow-blue-500/5 text-center relative overflow-hidden box-border">
           {/* Subtle Top Accent Gradient */}
           <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-blue" />
 
           {/* Success Animated Icon */}
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-emerald-50 text-emerald-500 mx-auto flex items-center justify-center border-4 border-emerald-100 shadow-inner mb-6">
-            <FiCheckCircle className="w-10 h-10 sm:w-12 sm:h-12" />
+          <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-full bg-emerald-50 text-emerald-500 mx-auto flex items-center justify-center border-4 border-emerald-100 shadow-inner mb-4 sm:mb-6">
+            <FiCheckCircle className="w-8 h-8 sm:w-11 sm:h-11" />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-bold mb-3">
-            <FiCheck className="w-4 h-4" />
-            অর্ডার সফলভাবে গ্রহণ করা হয়েছে
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-bold mb-3">
+            <FiCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+            <span>অর্ডার সফলভাবে গ্রহণ করা হয়েছে</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 leading-snug">
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-2 sm:mb-3 leading-snug">
             অভিনন্দন! আপনার অর্ডারটি নিশ্চিত হয়েছে
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed mb-6">
+          <p className="text-xs sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed mb-5 sm:mb-6">
             আমাদের কাস্টমার সাপোর্ট প্রতিনিধি খুব শীঘ্রই আপনার নম্বরে কল করে
             অর্ডারটি ভেরিফাই করবেন এবং পার্সেলটি পাঠিয়ে দেওয়া হবে।
           </p>
 
           {/* Order Reference Number Banner */}
-          <div className="inline-flex items-center gap-3 bg-slate-100/90 border border-slate-200 px-5 py-2.5 rounded-2xl text-xs sm:text-sm text-slate-700 font-latin">
-            <span className="font-semibold text-slate-500">Order ID:</span>
-            <span className="font-extrabold text-slate-900 tracking-wider text-base">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-slate-100/90 border border-slate-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-slate-700 font-latin max-w-full overflow-hidden">
+            <span className="font-semibold text-slate-500 shrink-0">Order ID:</span>
+            <span className="font-extrabold text-slate-900 tracking-wider text-sm sm:text-base truncate">
               {orderNumber}
             </span>
           </div>
 
           {/* Order Details & Summary Card */}
-          <div className="mt-8 text-left bg-slate-50/90 rounded-2xl p-5 sm:p-6 border border-slate-200/80 space-y-5">
-            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200/80 pb-3">
-              <FiShoppingBag className="w-5 h-5 text-[#0068FF]" />
-              অর্ডারের সংক্ষিপ্ত বিবরণ
+          <div className="mt-6 sm:mt-8 text-left bg-slate-50/90 rounded-xl sm:rounded-2xl p-3.5 sm:p-6 border border-slate-200/80 space-y-4 sm:space-y-5 w-full box-border">
+            <h2 className="text-sm sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200/80 pb-2.5 sm:pb-3">
+              <FiShoppingBag className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#0068FF] shrink-0" />
+              <span>অর্ডারের সংক্ষিপ্ত বিবরণ</span>
             </h2>
 
             {/* Product Item Preview */}
-            <div className="flex items-center gap-4 bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden bg-slate-100 shrink-0 border border-slate-100">
+            <div className="flex items-center gap-3 sm:gap-4 bg-white p-3 sm:p-4 rounded-xl border border-slate-200 overflow-hidden w-full box-border">
+              <div className="w-14 h-14 sm:w-18 sm:h-18 rounded-lg overflow-hidden bg-slate-100 shrink-0 border border-slate-100">
                 <img
                   src={variant.image}
                   alt={variant.name}
@@ -107,20 +107,20 @@ export const ThankYou: React.FC = () => {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-slate-900 text-sm sm:text-base truncate">
+                <h3 className="font-bold text-slate-900 text-xs sm:text-base truncate">
                   {PRODUCT_INFO.nameBangla}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-500 flex items-center gap-2 mt-1">
+                <p className="text-[11px] sm:text-sm text-slate-500 flex flex-wrap items-center gap-1.5 sm:gap-2 mt-0.5 sm:mt-1">
                   <span>
                     রঙ:{" "}
-                    <strong className="text-slate-800">
+                    <strong className="text-slate-800 font-semibold">
                       {order?.selectedColor || variant.name}
                     </strong>
                   </span>
                   <span>•</span>
                   <span>
                     পরিমাণ:{" "}
-                    <strong className="text-slate-800">
+                    <strong className="text-slate-800 font-semibold">
                       {toBanglaNumber(quantity)} পিস
                     </strong>
                   </span>
@@ -134,33 +134,33 @@ export const ThankYou: React.FC = () => {
 
             {/* Customer Details if available */}
             {order?.customerName && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-                <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
-                  <span className="text-slate-500 font-medium flex items-center gap-1.5">
-                    <FiUser className="w-3.5 h-3.5 text-[#0068FF]" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm w-full box-border">
+                <div className="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
+                  <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
+                    <FiUser className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
                     গ্রাহকের নাম:
                   </span>
-                  <span className="font-bold text-slate-900 block wrap-break-word">
+                  <span className="font-bold text-slate-900 block break-words text-xs sm:text-sm">
                     {order.customerName}
                   </span>
                 </div>
 
-                <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
-                  <span className="text-slate-500 font-medium flex items-center gap-1.5">
-                    <FiPhone className="w-3.5 h-3.5 text-[#0068FF]" />
+                <div className="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
+                  <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
+                    <FiPhone className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
                     মোবাইল নম্বর:
                   </span>
-                  <span className="font-bold text-slate-900 block font-latin">
+                  <span className="font-bold text-slate-900 block font-latin text-xs sm:text-sm break-all">
                     {order.phoneNumber}
                   </span>
                 </div>
 
-                <div className="sm:col-span-2 bg-white p-3 rounded-xl border border-slate-200 space-y-1">
-                  <span className="text-slate-500 font-medium flex items-center gap-1.5">
-                    <FiMapPin className="w-3.5 h-3.5 text-[#0068FF]" />
+                <div className="sm:col-span-2 bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
+                  <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
+                    <FiMapPin className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
                     ডেলিভারি ঠিকানা:
                   </span>
-                  <span className="font-semibold text-slate-900 block wrap-break-word">
+                  <span className="font-semibold text-slate-900 block break-words text-xs sm:text-sm">
                     {order.fullAddress}
                   </span>
                 </div>
@@ -168,14 +168,14 @@ export const ThankYou: React.FC = () => {
             )}
 
             {/* Price Calculations */}
-            <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-xs sm:text-sm">
-              <div className="flex justify-between items-center text-slate-600">
+            <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-2 text-xs sm:text-sm w-full box-border">
+              <div className="flex justify-between items-center gap-2 text-slate-600">
                 <span>পণ্যের মূল্য:</span>
-                <span className="font-semibold text-slate-900">
+                <span className="font-semibold text-slate-900 shrink-0">
                   ৳{toBanglaNumber(subtotal)}
                 </span>
               </div>
-              <div className="flex justify-between items-center text-slate-600">
+              <div className="flex justify-between items-center gap-2 text-slate-600">
                 <span>
                   ডেলিভারি চার্জ (
                   {order?.deliveryArea === "outside"
@@ -183,69 +183,49 @@ export const ThankYou: React.FC = () => {
                     : "ঢাকা শহর"}
                   ):
                 </span>
-                <span className="font-semibold text-slate-900">
+                <span className="font-semibold text-slate-900 shrink-0">
                   ৳{toBanglaNumber(deliveryFee)}
                 </span>
               </div>
-              <div className="flex justify-between items-center text-slate-600">
+              <div className="flex justify-between items-center gap-2 text-slate-600">
                 <span>পেমেন্ট পদ্ধতি:</span>
-                <span className="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                <span className="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100 text-[11px] sm:text-xs shrink-0">
                   ক্যাশ অন ডেলিভারি
                 </span>
               </div>
-              <div className="border-t border-slate-200/80 pt-2.5 flex justify-between items-center text-base sm:text-lg font-bold text-slate-900">
+              <div className="border-t border-slate-200/80 pt-2.5 flex justify-between items-center gap-2 text-sm sm:text-base font-bold text-slate-900">
                 <span>সর্বমোট পরিশোধযোগ্য:</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-[#0068FF]">
+                <span className="text-lg sm:text-2xl font-extrabold text-[#0068FF] shrink-0">
                   ৳{toBanglaNumber(grandTotal)}
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Delivery & Security Assurance Badges */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 text-left">
-            <div className="bg-blue-50/60 border border-blue-100 p-3 rounded-2xl flex items-start gap-2.5">
-              <FiTruck className="w-5 h-5 text-[#0068FF] shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">
-                  দ্রুত ডেলিভারি
-                </h4>
-                <p className="text-[11px] text-slate-600 leading-tight">
-                  ঢাকা ২-৩ দিন, বাইরে ৩-৫ দিন
-                </p>
+          {/* Delivery Assurance Badge */}
+          <div className="mt-5 sm:mt-6 text-left w-full">
+            <div className="bg-blue-50/60 border border-blue-100 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-3 w-full box-border">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-100/80 flex items-center justify-center text-[#0068FF] shrink-0">
+                <FiTruck className="w-5 h-5" />
               </div>
-            </div>
-            <div className="bg-emerald-50/60 border border-emerald-100 p-3 rounded-2xl flex items-start gap-2.5">
-              <FiPackage className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">
-                  চেক করে রিসিভ
+              <div className="min-w-0">
+                <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                  দ্রুত হোম ডেলিভারি
                 </h4>
-                <p className="text-[11px] text-slate-600 leading-tight">
-                  ডেলিভারি ম্যানের সামনে চেক করুন
-                </p>
-              </div>
-            </div>
-            <div className="bg-amber-50/60 border border-amber-100 p-3 rounded-2xl flex items-start gap-2.5">
-              <FiShield className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">
-                  ৭ দিনের গ্যারান্টি
-                </h4>
-                <p className="text-[11px] text-slate-600 leading-tight">
-                  যেকোনো সমস্যায় সহজ রিপ্লেসমেন্ট
+                <p className="text-[11px] sm:text-xs text-slate-600 leading-tight mt-0.5">
+                  সারা বাংলাদেশে দ্রুত ও নির্ভরযোগ্য হোম ডেলিভারি
                 </p>
               </div>
             </div>
           </div>
 
           {/* Action Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
             <Link
               to="/"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-blue bg-gradient-blue-hover text-white font-bold py-3.5 px-7 rounded-2xl shadow-md hover:shadow-lg transition-all active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-blue bg-gradient-blue-hover text-white font-bold py-3 sm:py-3.5 px-6 sm:px-7 rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition-all active:scale-98 text-xs sm:text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FiArrowLeft className="w-4 h-4 shrink-0" />
               <span>মূল পাতায় ফিরে যান</span>
             </Link>
 
@@ -253,9 +233,9 @@ export const ThankYou: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803d] text-white font-bold py-3.5 px-6 rounded-2xl shadow-md hover:shadow-lg transition-all active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803d] text-white font-bold py-3 sm:py-3.5 px-5 sm:px-6 rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition-all active:scale-98 text-xs sm:text-sm"
             >
-              <FaWhatsapp className="w-5 h-5" />
+              <FaWhatsapp className="w-4.5 h-4.5 sm:w-5 sm:h-5 shrink-0" />
               <span>হোয়াটসঅ্যাপে যোগাযোগ</span>
             </a>
           </div>

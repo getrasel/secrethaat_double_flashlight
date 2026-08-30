@@ -7,7 +7,7 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { toBanglaNumber, PRODUCT_INFO } from "../data/productData";
-import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.webp";
+import doubleLightImg from "../assets/images/double__flashlight/double_light.webp";
 
 export const OfferSection: React.FC = () => {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -56,7 +56,7 @@ export const OfferSection: React.FC = () => {
   }, []);
 
   const whatsappUrl = `https://wa.me/8801746867350?text=${encodeURIComponent(
-    "হ্যালো, আমি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই।",
+    "হ্যালো, আমি 2-in-1 Rechargeable Double Light Torch & Reading Lamp সম্পর্কে বিস্তারিত জানতে ও অর্ডার করতে চাই。",
   )}`;
 
   const scrollToOrder = () => {
@@ -70,7 +70,7 @@ export const OfferSection: React.FC = () => {
   };
 
   return (
-    <section className="pt-19.5 sm:pt-32.5 pb-6 sm:pb-16 bg-white">
+    <section className="pt-[30px] pb-6 sm:pb-16 bg-white">
       <div className="container-custom">
         {/* Main Minimalist Showcase Card: 135deg, #e2eeff 0%, #e2eeff 60%, #0068FF 100% */}
         <div
@@ -91,15 +91,15 @@ export const OfferSection: React.FC = () => {
               {/* Top Pill Badge */}
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs sm:text-base font-bold text-[#0068FF] shadow-xs">
                 <FiCheckCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0068FF]" />
-                <span>৩-ইন-১ মাল্টিফাংশনাল গ্যাজেট</span>
+                <span>২-ইন-১ রিচার্জেবল ডাবল লাইট</span>
               </div>
 
               {/* Main Headline (Bigger & punchy) */}
               <h1 className="text-[26px] sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                <span className="text-slate-900">আপনার টেবিলকে রাখুন</span>
+                <span className="text-slate-900">যেখানেই প্রয়োজন</span>
                 <br />
                 <span className="bg-[linear-gradient(90deg,#0A58CA_0%,#0068FF_35%,#0284C7_70%,#06B6D4_100%)] bg-clip-text text-transparent drop-shadow-2xs">
-                  সুন্দর ও গোছানো।
+                  সেখানেই আলো
                 </span>
               </h1>
 
@@ -162,10 +162,10 @@ export const OfferSection: React.FC = () => {
                 style={{
                   transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
                 }}
-                className="relative w-full max-w-97.5 h-80 sm:h-125 rounded-[22px] sm:rounded-[25px] bg-white shadow-2xl p-3 sm:p-5 flex items-center justify-center overflow-hidden will-change-transform group"
+                className="relative w-full max-w-[360px] sm:max-w-[430px] lg:max-w-[460px] aspect-square rounded-[22px] sm:rounded-[25px] bg-white shadow-2xl p-2 sm:p-3 flex items-center justify-center overflow-hidden will-change-transform group border border-slate-100"
               >
-                {/* 19% Discount Badge (Sapphire-Cyan Gradient) */}
-                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-30 bg-gradient-blue text-white px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-extrabold shadow-md flex items-center gap-1 backdrop-blur-md">
+                {/* Discount Badge */}
+                <div className="absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5 z-30 bg-gradient-blue text-white px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-extrabold shadow-md flex items-center gap-1 backdrop-blur-md">
                   <span>
                     {toBanglaNumber(PRODUCT_INFO.discountPercentage)}% ছাড়
                   </span>
@@ -179,9 +179,9 @@ export const OfferSection: React.FC = () => {
                   className="relative z-20 w-full h-full flex items-center justify-center will-change-transform"
                 >
                   <img
-                    src={tableClockHolderImg}
-                    alt="৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প"
-                    className="w-full h-full object-cover rounded-2xl sm:rounded-[18px] select-none pointer-events-none drop-shadow-md"
+                    src={doubleLightImg}
+                    alt="2-in-1 Rechargeable Double Light Torch & Reading Lamp"
+                    className="w-full h-full object-contain rounded-2xl sm:rounded-[18px] select-none pointer-events-none drop-shadow-sm"
                     loading="eager"
                     fetchPriority="high"
                     draggable={false}

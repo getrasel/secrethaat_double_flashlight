@@ -5,12 +5,12 @@ import {
   FiTruck,
   FiCheck,
   FiZap,
-  FiSmile,
-  FiClock,
+  FiSun,
+  FiSliders,
 } from "react-icons/fi";
 import { PRODUCT_INFO, toBanglaNumber } from "../data/productData";
-import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.webp";
-import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.webp";
+import doubleLightImg from "../assets/images/double__flashlight/double_light.webp";
+import flashlightImg from "../assets/images/double__flashlight/flashlight.webp";
 
 export const Hero: React.FC = () => {
   const scrollToOrder = () => {
@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-linear-to-b from-zinc-100/70 via-[#FAFAFA] to-[#FAFAFA]">
+    <section className="relative pt-[30px] pb-16 md:pb-24 overflow-hidden bg-linear-to-b from-zinc-100/70 via-[#FAFAFA] to-[#FAFAFA]">
       {/* Subtle Background Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-137.5 h-137.5 bg-sky-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-10 w-87.5 h-87.5 bg-pink-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -46,15 +46,15 @@ export const Hero: React.FC = () => {
             {/* Minimal Eyebrow Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200 text-xs font-semibold text-zinc-800 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-subtle" />
-              <span>প্রিমিয়াম ৩-ইন-১ মাল্টিফাংশনাল গ্যাজেট</span>
+              <span>প্রিমিয়াম ২-ইন-১ মাল্টিফাংশনাল গ্যাজেট</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-zinc-950 tracking-tight leading-[1.2]">
-              আপনার টেবিলকে রাখুন
+              যেখানেই প্রয়োজন
               <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-950 via-zinc-800 to-zinc-600">
-                সুন্দর ও গোছানো।
+                সেখানেই আলো
               </span>
             </h1>
 
@@ -69,16 +69,16 @@ export const Hero: React.FC = () => {
             {/* Core Feature Highlights Pills */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full pt-1">
               <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/80 border border-zinc-200/80 text-xs font-medium text-zinc-800">
-                <FiZap className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Moon Shape LED ল্যাম্প</span>
+                <FiSun className="w-4 h-4 text-amber-500 shrink-0" />
+                <span>Long-range Torch</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/80 border border-zinc-200/80 text-xs font-medium text-zinc-800">
-                <FiClock className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>Quartz অ্যানালগ ঘড়ি</span>
+                <FiZap className="w-4 h-4 text-sky-600 shrink-0" />
+                <span>Camping/Lantern</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/80 border border-zinc-200/80 text-xs font-medium text-zinc-800 col-span-2 sm:col-span-1">
-                <FiSmile className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>পেন/পেন্সিল হোল্ডার</span>
+                <FiSliders className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Dual Button Control</span>
               </div>
             </div>
 
@@ -126,9 +126,9 @@ export const Hero: React.FC = () => {
               {/* Product Visual Container */}
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-zinc-50 flex items-center justify-center">
                 <img
-                  src={tableClockHolderImg}
-                  alt="৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প"
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 hover:scale-105"
+                  src={doubleLightImg}
+                  alt="2-in-1 Rechargeable Double Light Torch & Reading Lamp"
+                  className="w-full h-full object-contain object-center transform transition-transform duration-700 hover:scale-105"
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -146,10 +146,10 @@ export const Hero: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Floating Overlay Badge: 3-in-1 Triple Function */}
+                {/* Floating Overlay Badge: 2-in-1 Dual Function */}
                 <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-zinc-900 px-3 py-1.5 rounded-xl text-xs font-bold shadow-md border border-zinc-200 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-500" />
-                  <span>ল্যাম্প + ঘড়ি + হোল্ডার</span>
+                  <span>টর্চ + ল্যাম্প</span>
                 </div>
               </div>
 
@@ -157,40 +157,40 @@ export const Hero: React.FC = () => {
               <div className="mt-3.5 px-2 py-1 flex items-center justify-between">
                 <div>
                   <h3 className="font-latin text-sm font-bold text-zinc-900">
-                    3-in-1 Cute Cartoon Theme Table Lamp
+                    2-in-1 Torch & Reading Lamp
                   </h3>
                   <p className="text-xs text-zinc-500 font-bangla">
-                    কার্টুন থিম • Moon Shape LED • পেন হোল্ডার
+                    ডুয়েল লাইটিং • USB রিচার্জেবল • লিথিয়াম ব্যাটারি
                   </p>
                 </div>
                 <div className="flex -space-x-1.5 overflow-hidden">
                   <span
-                    className="inline-block w-4.5 h-4.5 rounded-full bg-amber-400 border-2 border-white shadow-xs"
-                    title="Cute Yellow (কিউট ইয়েলো)"
+                    className="inline-block w-4.5 h-4.5 rounded-full bg-zinc-900 border-2 border-white shadow-xs"
+                    title="Classic Black"
                   />
                   <span
-                    className="inline-block w-4.5 h-4.5 rounded-full bg-orange-400 border-2 border-white shadow-xs"
-                    title="Cute Orange (কিউট অরেঞ্জ)"
+                    className="inline-block w-4.5 h-4.5 rounded-full bg-emerald-700 border-2 border-white shadow-xs"
+                    title="Emerald Green"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Subtle Floating Accessory Pill (Healis style) */}
+            {/* Subtle Floating Accessory Pill */}
             <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-zinc-200 p-3 rounded-2xl shadow-lg items-center gap-3 max-w-52.5">
               <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-zinc-100">
                 <img
-                  src={tableClockImg}
-                  alt="ডেস্ক ভিউ"
+                  src={flashlightImg}
+                  alt="টর্চ ভিউ"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-left">
                 <p className="text-[11px] font-bold text-zinc-900 leading-tight">
-                  ডেস্ক ডেকোর
+                  Long-range Torch
                 </p>
                 <p className="text-[10px] text-zinc-500 leading-tight">
-                  পড়ার টেবিলের সেরা সঙ্গী
+                  ফোকাসড ও শক্তিশালী আলো
                 </p>
               </div>
             </div>

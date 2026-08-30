@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FiShield, FiTruck, FiLock } from 'react-icons/fi';
+import { FiShield, FiTruck } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { PRODUCT_INFO } from '../data/productData';
 
@@ -23,14 +22,14 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-6 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-gradient-blue text-white flex items-center justify-center font-latin font-extrabold text-base shadow-sm">
-                3in1
+                2in1
               </div>
-              <span className="font-latin text-lg font-bold tracking-tight text-white">
-                3-in-1 Cute Cartoon Theme Table Lamp
+              <span className="font-latin text-base sm:text-lg font-bold tracking-tight text-white">
+                {PRODUCT_INFO.name}
               </span>
             </div>
             <p className="text-sm sm:text-base text-slate-300 max-w-md leading-relaxed">
-              {PRODUCT_INFO.nameBangla}। বাচ্চার পড়ার টেবিল, অফিস ডেস্ক কিংবা বেডসাইডের সৌন্দর্য বাড়াতে এবং প্রয়োজনীয় জিনিস গুছিয়ে রাখতে একটি প্রিমিয়াম সমাধান।
+              {PRODUCT_INFO.nameBangla}। {PRODUCT_INFO.intro}
             </p>
 
             {/* WhatsApp Direct Contact Badge (Rich Solid Green) */}
@@ -63,29 +62,19 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Copyright & Admin Access */}
+        {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
           <p>
             © {new Date().getFullYear()} {PRODUCT_INFO.name}. সর্বস্বত্ব সংরক্ষিত।
           </p>
 
-          <div className="flex items-center gap-5 sm:gap-6">
-            <Link
-              to="/admin"
-              className="text-xs text-slate-500 hover:text-slate-300 flex items-center gap-1 transition-colors"
-            >
-              <FiLock className="w-3.5 h-3.5" />
-              <span>অ্যাডমিন প্যানেল</span>
-            </Link>
-
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="text-slate-300 hover:text-white transition-colors cursor-pointer font-medium"
-            >
-              উপরে ফিরে যান ↑
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="text-slate-300 hover:text-white transition-colors cursor-pointer font-medium"
+          >
+            উপরে ফিরে যান ↑
+          </button>
         </div>
 
       </div>

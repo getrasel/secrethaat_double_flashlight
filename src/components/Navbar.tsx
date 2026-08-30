@@ -62,14 +62,14 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-3 text-slate-900 font-bold group"
           >
             <div className="w-10 h-10 rounded-2xl bg-gradient-blue text-white flex items-center justify-center font-latin font-extrabold text-base shadow-sm group-hover:scale-105 transition-transform">
-              3in1
+              2in1
             </div>
             <div className="flex flex-col">
               <span className="font-latin text-base sm:text-lg font-bold tracking-tight text-slate-900 leading-tight">
-                3-in-1 Table Lamp
+                2-in-1 Torch & Lamp
               </span>
               <span className="text-xs sm:text-sm font-bangla font-medium text-slate-500 leading-none">
-                ৩-ইন-১ কার্টুন টেবিল ল্যাম্প
+                ডাবল লাইট টর্চ ও রিডিং ল্যাম্প
               </span>
             </div>
           </Link>
@@ -96,13 +96,6 @@ export const Navbar: React.FC = () => {
               className="hover:text-[#0068FF] transition-colors cursor-pointer"
             >
               স্পেসিফিকেশন
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection("testimonials")}
-              className="hover:text-[#0068FF] transition-colors cursor-pointer"
-            >
-              রিভিউ
             </button>
             <button
               type="button"
@@ -167,13 +160,6 @@ export const Navbar: React.FC = () => {
                 className="text-left py-1 hover:text-[#0068FF] cursor-pointer"
               >
                 স্পেসিফিকেশন ও বিবরণ
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollToSection("testimonials")}
-                className="text-left py-1 hover:text-[#0068FF] cursor-pointer"
-              >
-                গ্রাহক রিভিউ
               </button>
               <button
                 type="button"

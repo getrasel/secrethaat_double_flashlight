@@ -24,7 +24,7 @@ import { createSupabaseOrder } from "../utils/orderStorage";
 
 export const OrderSection: React.FC = () => {
   const navigate = useNavigate();
-  const [selectedColor, setSelectedColor] = useState<string>("yellow");
+  const [selectedColor, setSelectedColor] = useState<string>("black");
   const [quantity, setQuantity] = useState<number>(1);
   const [deliveryArea, setDeliveryArea] = useState<"dhaka" | "outside">(
     "dhaka",
@@ -458,7 +458,7 @@ export const OrderSection: React.FC = () => {
             <div className="bg-slate-50/70 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
               <div className="mb-6 pb-4 border-b border-slate-200">
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  ৩. অর্ডার ফর্ম পূরণ করুন
+                  অর্ডার করতে নিচের ফর্মটি পূরণ করুন
                 </h3>
                 <p className="text-sm text-slate-500">
                   আপনার ডেলিভারি ঠিকানা ও মোবাইল নম্বর সঠিকভাবে দিন

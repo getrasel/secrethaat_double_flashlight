@@ -63,7 +63,7 @@ export const LotteryOffer: React.FC = () => {
 
               {/* Description */}
               <p className="text-xs sm:text-base lg:text-lg text-slate-700 leading-normal sm:leading-relaxed font-medium">
-                ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প অর্ডার করলেই প্রতিটি অর্ডারের সাথে নিশ্চিতভাবে পেয়ে যাবেন ১টি ইউনিক মেগা লটারি কুপন। লাকি ড্র-এর মাধ্যমে বিজয়ী পাবেন আকর্ষণীয় নতুন বাইক!
+                2-in-1 Rechargeable Double Light Torch & Reading Lamp অর্ডার করলেই প্রতিটি অর্ডারের সাথে নিশ্চিতভাবে পেয়ে যাবেন ১টি ইউনিক মেগা লটারি কুপন। লাকি ড্র-এর মাধ্যমে বিজয়ী পাবেন আকর্ষণীয় নতুন বাইক!
               </p>
 
               {/* 3 Step Simple Process */}

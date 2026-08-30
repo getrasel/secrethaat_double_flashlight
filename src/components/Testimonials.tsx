@@ -35,7 +35,7 @@ export const Testimonials: React.FC = () => {
           </h2>
           
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-medium">
-            আমাদের ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প ব্যবহারের পর সম্মানিত গ্রাহকদের সন্তুষ্টির কিছু বাস্তব মন্তব্য।
+            আমাদের 2-in-1 Rechargeable Double Light Torch & Reading Lamp ব্যবহারের পর সম্মানিত গ্রাহকদের সন্তুষ্টির কিছু বাস্তব মন্তব্য।
           </p>
         </div>
 

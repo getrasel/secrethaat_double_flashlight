@@ -2,13 +2,12 @@ import React from "react";
 import {
   FiLayers,
   FiZap,
-  FiClock,
-  FiStar,
-  FiGift,
+  FiSliders,
+  FiSun,
+  FiBatteryCharging,
   FiHome,
-  FiEdit3,
 } from "react-icons/fi";
-import { PRODUCT_BENEFITS } from "../data/productData";
+import { PRODUCT_BENEFITS, PRODUCT_INFO } from "../data/productData";
 import shapeSpiral from "../assets/images/shape/1.png";
 import shapeSparkle from "../assets/images/shape/2.png";
 
@@ -17,42 +16,37 @@ export const Benefits: React.FC = () => {
     switch (iconName) {
       case "sparkles":
         return {
-          icon: <FiStar className="w-7 h-7 text-[#D97706]" />,
+          icon: <FiSun className="w-7 h-7 text-[#D97706]" />,
           bg: "bg-amber-50/90 text-[#D97706] border-amber-100",
         };
       case "lamp":
         return {
-          icon: <FiZap className="w-7 h-7 text-[#0068FF]" />,
+          icon: <FiSun className="w-7 h-7 text-[#0068FF]" />,
           bg: "bg-blue-50/90 text-[#0068FF] border-blue-100",
         };
-      case "clock":
+      case "zap":
         return {
-          icon: <FiClock className="w-7 h-7 text-[#4F46E5]" />,
+          icon: <FiSliders className="w-7 h-7 text-[#4F46E5]" />,
           bg: "bg-indigo-50/90 text-[#4F46E5] border-indigo-100",
-        };
-      case "holder":
-        return {
-          icon: <FiEdit3 className="w-7 h-7 text-[#0284C7]" />,
-          bg: "bg-sky-50/90 text-[#0284C7] border-sky-100",
         };
       case "multipurpose":
         return {
-          icon: <FiLayers className="w-7 h-7 text-[#0068FF]" />,
-          bg: "bg-blue-50/90 text-[#0068FF] border-blue-100",
+          icon: <FiLayers className="w-7 h-7 text-[#0284C7]" />,
+          bg: "bg-sky-50/90 text-[#0284C7] border-sky-100",
         };
       case "home":
         return {
           icon: <FiHome className="w-7 h-7 text-[#06B6D4]" />,
           bg: "bg-cyan-50/90 text-[#06B6D4] border-cyan-100",
         };
-      case "gift":
+      case "battery":
         return {
-          icon: <FiGift className="w-7 h-7 text-[#16A34A]" />,
+          icon: <FiBatteryCharging className="w-7 h-7 text-[#16A34A]" />,
           bg: "bg-emerald-50/90 text-[#16A34A] border-emerald-100",
         };
       default:
         return {
-          icon: <FiLayers className="w-7 h-7 text-[#0068FF]" />,
+          icon: <FiZap className="w-7 h-7 text-[#0068FF]" />,
           bg: "bg-blue-50/90 text-[#0068FF] border-blue-100",
         };
     }
@@ -87,11 +81,10 @@ export const Benefits: React.FC = () => {
             প্রধান সুবিধাসমূহ
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-            কেন এটি আপনার টেবিলের সেরা সঙ্গী?
+            কেন এটি আপনার সেরা আলোর সঙ্গী?
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-medium">
-            দৈনন্দিন পড়ালেখা, কাজ ও জীবনযাত্রাকে আরও গোছানো এবং আরামদায়ক করতে
-            প্রয়োজনীয় প্রতিটি সুবিধা এতে দেওয়া হয়েছে।
+            {PRODUCT_INFO.intro}
           </p>
         </div>
 

@@ -1,7 +1,7 @@
-import cartoonClockImg from "../assets/images/3inone_table_lamp/cartoon_clock.webp";
-import tableClockImg from "../assets/images/3inone_table_lamp/table_clock.webp";
-import tableClockHolderImg from "../assets/images/3inone_table_lamp/table_clock_holder.webp";
-import timeLightImg from "../assets/images/3inone_table_lamp/time_light.webp";
+import doubleLightImg from "../assets/images/double__flashlight/double_light.webp";
+import flashlightImg from "../assets/images/double__flashlight/flashlight.webp";
+import flashlightOutsideImg from "../assets/images/double__flashlight/flashlight_outside.webp";
+import niceLightImg from "../assets/images/double__flashlight/nice_light.webp";
 
 import type {
   ProductColor,
@@ -13,168 +13,171 @@ import type {
 } from "../types";
 
 export const PRODUCT_INFO = {
-  name: "3-in-1 Cute Cartoon Theme Table Lamp",
-  nameBangla: "৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প",
-  tagline: "আপনার টেবিলকে রাখুন সুন্দর ও গোছানো।",
+  name: "2-in-1 Rechargeable Double Light Torch & Reading Lamp",
+  nameBangla: "২-ইন-১ রিচার্জেবল ডাবল লাইট টর্চ ও রিডিং ল্যাম্প",
+  tagline: "যেখানেই প্রয়োজন সেখানেই আলো",
   subTagline:
-    "পড়ার টেবিল বা ঘরের কর্নারকে আরও সুন্দর ও গোছানো রাখতে নিয়ে এলাম ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প—ল্যাম্প, ঘড়ি ও পেন হোল্ডার একসাথে।",
+    "শক্তিশালী টর্চ ও চারপাশে ছড়ানো ল্যাম্প—দুটি আলোর সুবিধা এক ডিভাইসে।",
+  intro:
+    "ঘরের লোডশেডিং থেকে শুরু করে পড়াশোনা, ক্যাম্পিং কিংবা ট্রাভেলিং—প্রয়োজনের মুহূর্তে নির্ভরযোগ্য আলো হাতের কাছেই।",
+  offerHeadline: "প্রয়োজনের আলো থাকুক হাতের কাছেই।",
+  offerSubtitle:
+    "ঘর, পড়াশোনা, ক্যাম্পিং কিংবা ট্রাভেলিং—প্রয়োজনের মুহূর্তে প্রস্তুত থাকুক আপনার আলো।",
   regularPrice: 1190,
-  basePrice: 890,
-  discountAmount: 300,
-  discountPercentage: 25,
+  basePrice: 720,
+  discountAmount: 470,
+  discountPercentage: 39,
   deliveryDhaka: 70,
   deliveryOutside: 130,
 };
 
 export const COLOR_VARIANTS: ProductColor[] = [
   {
-    id: "yellow",
-    name: "কিউট ইয়েলো",
-    nameEn: "Cute Yellow",
-    hex: "#FBBF24",
-    badgeBg: "bg-amber-100 text-amber-700 border-amber-200",
-    image: tableClockImg,
+    id: "black",
+    name: "ক্ল্যাসিক ব্ল্যাক",
+    nameEn: "Classic Black",
+    hex: "#18181B",
+    badgeBg: "bg-zinc-100 text-zinc-800 border-zinc-200",
+    image: niceLightImg,
   },
   {
-    id: "orange",
-    name: "কিউট অরেঞ্জ",
-    nameEn: "Cute Orange",
-    hex: "#FB923C",
-    badgeBg: "bg-orange-100 text-orange-700 border-orange-200",
-    image: timeLightImg,
+    id: "green",
+    name: "এমারেল্ড গ্রিন",
+    nameEn: "Emerald Green",
+    hex: "#065F46",
+    badgeBg: "bg-emerald-100 text-emerald-800 border-emerald-200",
+    image: flashlightOutsideImg,
   },
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "1",
-    title: "৩-ইন-১ কমপ্লিট লুক",
-    caption: "টেবিল ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার",
-    image: tableClockHolderImg,
+    title: "২-ইন-১ কমপ্লিট লুক",
+    caption: "লং-রেঞ্জ টর্চ লাইট + চারপাশে ছড়ানো ল্যাম্প",
+    image: niceLightImg,
     category: "মেইন লুক",
   },
   {
     id: "2",
-    title: "কিউট ইয়েলো বিয়ার মোড",
-    caption: "Moon Shape Flexible LED Light সহ চমৎকার স্টাডি ভিউ",
-    image: tableClockImg,
-    category: "টেবিল ল্যাম্প",
+    title: "লং-রেঞ্জ ফোকাসড টর্চ",
+    caption:
+      "শক্তিশালী Long-range Torch Light দূরের জায়গাতেও পরিষ্কার ও ফোকাসড আলো দেয়",
+    image: flashlightImg,
+    category: "টর্চ লাইট",
   },
   {
     id: "3",
-    title: "কিউট অরেঞ্জ কার্টুন মোড",
-    caption: "রাতে পড়ার টেবিল ও বেডসাইডে ব্যবহারের উপযোগী",
-    image: timeLightImg,
-    category: "নাইট লাইট",
+    title: "মাল্টি-ইউজ জরুরি লাইট",
+    caption:
+      "Soft Camping/Lantern Mode ও ডাবল সাইড লাইট যা ঘর বা ক্যাম্পিংয়ে আলো ছড়ায়",
+    image: doubleLightImg,
+    category: "ডাবল লাইট",
   },
   {
     id: "4",
-    title: "প্রিমিয়াম বক্স প্যাকেজিং",
-    caption: "নিরাপদ প্যাকেজিংসহ প্রিয়জনকে উপহার দেওয়ার সেরা পছন্দ",
-    image: cartoonClockImg,
-    category: "প্যাকেজিং",
+    title: "ইউএসবি রিচার্জেবল পোর্ট",
+    caption: "Built-in Lithium Battery ও সহজ USB রিচার্জিং সুবিধা",
+    image: flashlightOutsideImg,
+    category: "রিচার্জেবল",
   },
 ];
 
 export const PRODUCT_BENEFITS: BenefitItem[] = [
   {
     id: 1,
-    title: "নমনীয় LED লাইট",
+    title: "ডুয়েল লাইটিং",
     description:
-      "ওপরের দিকে রয়েছে চাঁদ আকৃতির (Moon Shape) ফ্লেক্সিবল LED ল্যাম্প, যা রাতে পড়ার টেবিল বা নাইট স্ট্যান্ডে ব্যবহারের জন্য দারুণ উপযোগী।",
+      "ফোকাসড Long-range Torch এবং Soft Camping/Lantern Light—দুটি আলোর সুবিধা একসাথে।",
     iconName: "lamp",
-    tag: "Moon Shape LED",
+    tag: "01 — ডুয়েল লাইটিং",
   },
   {
     id: 2,
-    title: "অ্যানালগ ঘড়ি",
+    title: "বহুমুখী ব্যবহার",
     description:
-      "সামনে রয়েছে স্পষ্ট সংখ্যাযুক্ত Quartz ব্যাটারি চালিত অ্যানালগ ঘড়ি, যা একই সঙ্গে সময় দেখার সুবিধা ও সৌন্দর্য দুটোই যোগ করে।",
-    iconName: "clock",
-    tag: "Quartz ঘড়ি",
+      "ঘর, পড়ার টেবিল, ক্যাম্পিং কিংবা ট্রাভেলিং—বিভিন্ন পরিস্থিতিতে সহজেই ব্যবহার করা যায়।",
+    iconName: "multipurpose",
+    tag: "02 — বহুমুখী ব্যবহার",
   },
   {
     id: 3,
-    title: "পেন হোল্ডার",
+    title: "সহজ ডুয়েল কন্ট্রোল",
     description:
-      "ঘড়ির পাশেই রয়েছে একটি সুন্দর পেন/পেন্সিল হোল্ডার, যেখানে কলম, পেন্সিল ও ছোটখাটো জিনিস গুছিয়ে রাখা যায়।",
-    iconName: "holder",
-    tag: "পেন হোল্ডার",
+      "দুটি আলাদা বাটনের মাধ্যমে টর্চ ও ল্যাম্প মোড আলাদাভাবে নিয়ন্ত্রণ করুন।",
+    iconName: "zap",
+    tag: "03 — ডুয়েল কন্ট্রোল",
   },
   {
     id: 4,
-    title: "৩-ইন-১ মাল্টিফাংশনাল ব্যবহার",
+    title: "শক্তিশালী আলো, প্রয়োজনের জায়গায়",
     description:
-      "একটি পণ্যেই পাওয়া যাচ্ছে: টেবিল ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার। ফলে এটি একই সঙ্গে ব্যবহারিক এবং ডেকোরেশন—দুই কাজেই উপযোগী।",
-    iconName: "multipurpose",
-    tag: "৩-ইন-১ সুবিধা",
+      "শক্তিশালী Long-range Torch Light দূরের জায়গাতেও পরিষ্কার ও ফোকাসড আলো দিতে সাহায্য করে।",
+    iconName: "sparkles",
+    tag: "ফোকাসড টর্চ",
   },
   {
     id: 5,
-    title: "পড়ার টেবিল ও ঘর সাজাতে উপযোগী",
+    title: "চারপাশে ছড়ানো নরম আলো",
     description:
-      "বাচ্চাদের পড়াশোনার টেবিল, নাইট স্ট্যান্ড কিংবা ঘরের কর্নারকে আরও সুন্দর ও গোছানো করে তুলতে এটি চমৎকার একটি সংযোজন।",
+      "Soft Camping/Lantern Mode চারপাশে আলো ছড়িয়ে দেয়, যা পড়াশোনা, ঘরের কর্নার কিংবা ক্যাম্পিংয়ের জন্য উপযোগী।",
     iconName: "home",
-    tag: "ডেস্ক ডেকোর",
+    tag: "ক্যাম্পিং ল্যাম্প",
   },
   {
     id: 6,
-    title: "সুন্দর গিফট আইডিয়া",
+    title: "রিচার্জ করুন। বারবার ব্যবহার করুন।",
     description:
-      "এর কিউট ডিজাইন ও ব্যবহারিক সুবিধার কারণে এটি প্রিয়জন, শিশু বা পরিবারের সদস্যদের জন্য একটি আকর্ষণীয় উপহার হতে পারে।",
-    iconName: "gift",
-    tag: "সেরা উপহার",
+      "Built-in Lithium Battery থাকার কারণে আলাদা ব্যাটারি কেনার ঝামেলা নেই। USB Port, পাওয়ার ব্যাংক কিংবা মোবাইল চার্জার ব্যবহার করে সহজেই রিচার্জ করা যায়।",
+    iconName: "battery",
+    tag: "USB রিচার্জেবল",
   },
 ];
 
 export const PRODUCT_SPECS: FeatureSpec[] = [
   {
     label: "পণ্যের নাম",
-    value: "3-in-1 Cute Cartoon Theme Table Lamp",
+    value: "2-in-1 Rechargeable Double Light Torch & Reading Lamp",
     icon: "tag",
     highlight: true,
   },
   {
     label: "পণ্যের ধরন",
-    value: "৩-ইন-১ মাল্টিফাংশনাল টেবিল ল্যাম্প",
+    value: "2-in-1 Rechargeable Torch & Lamp",
     icon: "layers",
     highlight: true,
   },
   {
-    label: "প্রধান সুবিধা",
-    value: "LED ল্যাম্প + অ্যানালগ ঘড়ি + পেন হোল্ডার",
-    icon: "star",
+    label: "লাইটিং মোড",
+    value: "Long-range Torch + Camping/Lantern",
+    icon: "zap",
     highlight: true,
   },
   {
-    label: "ল্যাম্প টাইপ",
-    value: "Moon Shape Flexible LED Light",
+    label: "কন্ট্রোল",
+    value: "Dual Button Control",
+    icon: "sliders",
+    highlight: true,
+  },
+  {
+    label: "ব্যাটারি",
+    value: "Built-in Lithium Battery",
+    icon: "battery",
+  },
+  {
+    label: "চার্জিং",
+    value: "USB Charging",
     icon: "zap",
   },
   {
-    label: "ঘড়ির ধরন",
-    value: "Quartz Battery Powered Analog Clock",
-    icon: "clock",
-  },
-  {
-    label: "ডিজাইন থিম",
-    value: "Cute Bear / Rabbit Cartoon Theme",
-    icon: "smile",
-  },
-  {
-    label: "পেন হোল্ডার",
-    value: "পেন, পেন্সিল ও ছোটখাটো জিনিস রাখার সুবিধা",
-    icon: "box",
-  },
-  {
-    label: "উপযুক্ত স্থান",
-    value:
-      "বাচ্চাদের পড়ার টেবিল, নাইট স্ট্যান্ড, ঘরের কর্নার, ডেস্ক ডেকোরেশন, গিফট",
+    label: "ব্যবহার",
+    value: "ঘর, পড়াশোনা, ক্যাম্পিং ও ট্রাভেলিং",
     icon: "home",
   },
   {
     label: "প্যাকেজে যা থাকছে",
-    value: "১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প",
+    value:
+      "১ × 2-in-1 Rechargeable Double Light Torch & Lamp, ১ × USB Charging Cable",
     icon: "box",
   },
 ];
@@ -187,9 +190,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     date: "৩ দিন আগে",
     comment:
-      "বাচ্চার পড়ার টেবিলের জন্য নিয়েছিলাম। দেখতে দারুণ কিউট এবং ওপরের চাঁদের মতো LED লাইটের আলো পড়ার জন্য খুব সুন্দর। পেন হোল্ডারে কলমগুলোও সাজিয়ে রাখা যায়।",
-    colorPurchased: "কিউট ইয়েলো (Cute Yellow)",
-    avatarColor: "bg-amber-100 text-amber-700",
+      "লোডশেডিংয়ের সময় ও পড়ার টেবিলে ব্যবহারের জন্য নিয়েছিলাম। টর্চের আলো বেশ দূরের জায়গাতেও স্পষ্ট আলো দেয় এবং ল্যাম্পের নরম আলো পড়ার জন্য আরামদায়ক।",
+    colorPurchased: "ক্ল্যাসিক ব্ল্যাক (Classic Black)",
+    avatarColor: "bg-blue-100 text-blue-700",
   },
   {
     id: "t2",
@@ -198,9 +201,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     date: "১ সপ্তাহ আগে",
     comment:
-      "এক গ্যাজেটেই টেবিল ল্যাম্প, ঘড়ি আর পেন হোল্ডার—এই আইডিয়াটা দারুণ! কোয়ালিটি যথেষ্ট প্রিমিয়াম এবং টেবিল খুব পরিপাটি দেখায়।",
-    colorPurchased: "কিউট অরেঞ্জ (Cute Orange)",
-    avatarColor: "bg-orange-100 text-orange-700",
+      "এক ডিভাইসেই লং-রেঞ্জ টর্চ এবং ক্যাম্পিং ল্যাম্পের সুবিধা। আলাদা ব্যাটারির কোনো ঝামেলা নেই, ইউএসবি কেবল দিয়ে মোবাইল চার্জার বা পাওয়ার ব্যাংক থেকেই চার্জ দেওয়া যায়।",
+    colorPurchased: "এমারেল্ড গ্রিন (Emerald Green)",
+    avatarColor: "bg-emerald-100 text-emerald-700",
   },
   {
     id: "t3",
@@ -209,9 +212,9 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     date: "২ সপ্তাহ আগে",
     comment:
-      "আমার ছোট ভাগ্নির জন্মদিনে গিফট দিয়েছিলাম। ও কার্টুন ডিজাইন আর লাইট দেখে ভীষণ আনন্দ পেয়েছে। উপহার দেওয়ার জন্য সেরা একটি জিনিস।",
-    colorPurchased: "কিউট ইয়েলো (Cute Yellow)",
-    avatarColor: "bg-emerald-100 text-emerald-700",
+      "দুটি আলাদা বাটনের মাধ্যমে টর্চ ও ল্যাম্প মোড আলাদাভাবে নিয়ন্ত্রণ করা যায়—এই ফিচারটা খুবই সহজ ও চমৎকার। ট্রাভেল ও ঘরের ব্যবহারের জন্য দারুণ!",
+    colorPurchased: "ক্ল্যাসিক ব্ল্যাক (Classic Black)",
+    avatarColor: "bg-amber-100 text-amber-700",
   },
   {
     id: "t4",
@@ -220,8 +223,8 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     date: "২ সপ্তাহ আগে",
     comment:
-      "অ্যানালগ ঘড়িটি একদম নিখুঁত সময় দেয় এবং ফ্লেক্সিবল LED ল্যাম্পটি ইচ্ছামতো অ্যাডজাস্ট করা যায়। প্যাকেজিংও অনেক ভালো ছিল। ধন্যবাদ!",
-    colorPurchased: "কিউট অরেঞ্জ (Cute Orange)",
+      "বিল্ট-ইন লিথিয়াম ব্যাটারি এবং ফোকাসড আলো। হঠাৎ বিদ্যুৎ চলে গেলে ঘরের চারপাশ আলোকিত করতে ল্যাম্প মোডটি দারুণ কাজ করে। ধন্যবাদ!",
+    colorPurchased: "এমারেল্ড গ্রিন (Emerald Green)",
     avatarColor: "bg-zinc-100 text-zinc-700",
   },
 ];
@@ -229,51 +232,31 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq1",
-    question: "এটি কি ৩-ইন-১ পণ্য?",
-    answer:
-      "হ্যাঁ। এতে টেবিল ল্যাম্প, অ্যানালগ ঘড়ি এবং পেন হোল্ডার—এই তিনটি সুবিধা একসাথে রয়েছে।",
+    question: "এই লাইটে কয়টি লাইটিং মোড রয়েছে?",
+    answer: "দুটি—Long-range Torch এবং Soft Camping/Lantern Mode।",
   },
   {
     id: "faq2",
-    question: "ল্যাম্পটি কেমন?",
+    question: "টর্চ ও ল্যাম্প কি আলাদাভাবে ব্যবহার করা যায়?",
     answer:
-      "এতে চাঁদ আকৃতির (Moon Shape) ফ্লেক্সিবল LED ল্যাম্প রয়েছে, যা সহজে যেকোনো দিকে ঘুরিয়ে রাতে পড়াশোনা বা বেডসাইডে ব্যবহার করা যায়।",
+      "হ্যাঁ, দুটি আলাদা বাটনের মাধ্যমে টর্চ ও ল্যাম্প আলাদাভাবে নিয়ন্ত্রণ করা যায়।",
   },
   {
     id: "faq3",
-    question: "এতে কি ঘড়ি আছে?",
+    question: "কীভাবে চার্জ করতে হবে?",
     answer:
-      "হ্যাঁ, সামনে স্পষ্ট সংখ্যাযুক্ত একটি Quartz ব্যাটারি চালিত অ্যানালগ ঘড়ি রয়েছে।",
+      "USB Port-এর মাধ্যমে মোবাইল চার্জার বা পাওয়ার ব্যাংক দিয়ে রিচার্জ করা যায়।",
   },
   {
     id: "faq4",
-    question: "পেন রাখা যাবে কি?",
-    answer:
-      "হ্যাঁ, ঘড়ির পাশেই রয়েছে একটি সুন্দর পেন হোল্ডার, যেখানে কলম, পেন্সিল ও ছোটখাটো জিনিস গুছিয়ে রাখা যায়।",
+    question: "আলাদা ব্যাটারি লাগবে কি?",
+    answer: "না, এতে Built-in Lithium Battery রয়েছে।",
   },
   {
     id: "faq5",
-    question: "কোথায় ব্যবহার করা যায়?",
+    question: "প্যাকেজে কী কী থাকছে?",
     answer:
-      "বাচ্চাদের পড়ার টেবিল, নাইট স্ট্যান্ড, অফিস ডেস্ক কিংবা ঘরের যেকোনো কর্নারে ডেকোরেশন ও ব্যবহারের জন্য দারুণ উপযোগী।",
-  },
-  {
-    id: "faq6",
-    question: "এটি কি গিফট হিসেবে দেওয়া যায়?",
-    answer:
-      "হ্যাঁ, এর কিউট কার্টুন ডিজাইন ও ব্যবহারিক সুবিধার কারণে এটি শিশু, প্রিয়জন বা পরিবারের সদস্যদের জন্য আকর্ষণীয় একটি উপহার।",
-  },
-  {
-    id: "faq7",
-    question: "ঢাকার ভিতরে ও বাইরে ডেলিভারি চার্জ কত?",
-    answer:
-      "ঢাকার ভিতরে হোম ডেলিভারি চার্জ মাত্র ৳৭০ এবং ঢাকার বাইরে সারা বাংলাদেশে ৳১৩০। ক্যাশ অন ডেলিভারিতে পণ্য দেখে মূল্য পরিশোধ করতে পারবেন।",
-  },
-  {
-    id: "faq8",
-    question: "প্যাকেজে কী কী থাকবে?",
-    answer:
-      "প্যাকেজে থাকবে ১টি ৩-ইন-১ কিউট কার্টুন থিম টেবিল ল্যাম্প (Moon Shape LED লাইট, অ্যানালগ ঘড়ি ও পেন হোল্ডারসহ) ও সুরক্ষিত বক্স প্যাকেজিং।",
+      "একটি 2-in-1 Rechargeable Double Light Torch & Lamp এবং একটি USB Charging Cable।",
   },
 ];
 
@@ -293,3 +276,4 @@ export const toBanglaNumber = (num: number | string): string => {
   };
   return String(num).replace(/[0-9]/g, (match) => banglaDigits[match] || match);
 };
+
