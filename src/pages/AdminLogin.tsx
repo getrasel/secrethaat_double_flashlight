@@ -18,7 +18,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "15981598" || password === "25801598") {
+    if (password === "15981598") {
       sessionStorage.setItem("admin_authenticated", "true");
       localStorage.setItem("admin_authenticated", "true");
       setError("");
