@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
@@ -64,11 +62,8 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col font-bangla antialiased selection:bg-[#0068FF] selection:text-white">
-      {/* Header Navigation Bar */}
-      <Navbar />
-
       {/* Dynamic Page Content */}
-      <main className="flex-1 w-full pt-16 sm:pt-20">
+      <main className="flex-1 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/thank-you" element={<ThankYou />} />
@@ -76,9 +71,6 @@ const AppContent: React.FC = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-
-      {/* Footer */}
-      <Footer />
 
       {/* Floating WhatsApp Button */}
       <WhatsAppButton />
