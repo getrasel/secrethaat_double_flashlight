@@ -38,7 +38,14 @@ export const Features: React.FC = () => {
     {
       title: "প্যাকেজে যা থাকছে",
       icon: <FiPackage className="w-5 h-5 text-violet-500" />,
-      items: ["১ × ২-ইন-১ রিচার্জেবল ডাবল লাইট", "১ × ফাস্ট USB চার্জিং কেবল"],
+      items: [
+        <span key="item1">
+          <span className="font-number font-bold text-slate-900">১</span> × <span className="font-number font-bold text-slate-900">২-ইন-১</span> রিচার্জেবল ডাবল লাইট
+        </span>,
+        <span key="item2">
+          <span className="font-number font-bold text-slate-900">১</span> × ফাস্ট USB চার্জিং কেবল
+        </span>,
+      ],
     },
   ];
 
