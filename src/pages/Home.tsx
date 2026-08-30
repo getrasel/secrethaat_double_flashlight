@@ -1,34 +1,34 @@
-import React from 'react';
-import { OfferSection } from '../components/OfferSection';
-import { Benefits } from '../components/Benefits';
-import { Gallery } from '../components/Gallery';
-import { Features } from '../components/Features';
-import { OrderSection } from '../components/OrderSection';
-import { FinalCTA } from '../components/FinalCTA';
-import { FAQ } from '../components/FAQ';
+import React from "react";
+import { OfferSection } from "../components/OfferSection";
+import { Benefits } from "../components/Benefits";
+import { Gallery } from "../components/Gallery";
+import { Features } from "../components/Features";
+import { OrderSection } from "../components/OrderSection";
+import { FinalCTA } from "../components/FinalCTA";
+import { FAQ } from "../components/FAQ";
 
 export const Home: React.FC = () => {
   return (
     <>
-      {/* 1. Top Intro / Value Offer Section */}
+      {/* 1. Hero & Top Value Offer Showcase */}
       <OfferSection />
 
-      {/* 2. Product Benefits */}
+      {/* 2. Key Product Benefits */}
       <Benefits />
 
-      {/* 3. Product Gallery */}
+      {/* 3. High-Resolution Product Gallery */}
       <Gallery />
 
-      {/* 4. Features / Specifications */}
+      {/* 4. Technical Features & Specs */}
       <Features />
 
-      {/* 5. Color Selection + Live Calculator + Order Form */}
+      {/* 5. Color Selection & Live Checkout Form */}
       <OrderSection />
 
-      {/* 6. Final CTA */}
+      {/* 6. Final Urgency CTA */}
       <FinalCTA />
 
-      {/* 7. FAQ Accordion */}
+      {/* 7. Frequently Asked Questions */}
       <FAQ />
     </>
   );

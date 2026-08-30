@@ -120,12 +120,12 @@ export const ThankYou: React.FC = () => {
                   <span>•</span>
                   <span>
                     পরিমাণ:{" "}
-                    <strong className="text-slate-800 font-semibold">
+                    <strong className="text-slate-800 font-semibold font-number">
                       {toBanglaNumber(quantity)} পিস
                     </strong>
                   </span>
                 </p>
-                <div className="text-xs sm:text-sm font-bold text-[#0068FF] mt-1 font-latin">
+                <div className="text-xs sm:text-sm font-bold text-[#0265FF] mt-1 font-number">
                   ৳{toBanglaNumber(unitPrice)} × {toBanglaNumber(quantity)} = ৳
                   {toBanglaNumber(subtotal)}
                 </div>
@@ -137,7 +137,7 @@ export const ThankYou: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm w-full box-border">
                 <div className="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                   <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
-                    <FiUser className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
+                    <FiUser className="w-3.5 h-3.5 text-[#0265FF] shrink-0" />
                     গ্রাহকের নাম:
                   </span>
                   <span className="font-bold text-slate-900 block break-words text-xs sm:text-sm">
@@ -147,7 +147,7 @@ export const ThankYou: React.FC = () => {
 
                 <div className="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                   <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
-                    <FiPhone className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
+                    <FiPhone className="w-3.5 h-3.5 text-[#0265FF] shrink-0" />
                     মোবাইল নম্বর:
                   </span>
                   <span className="font-bold text-slate-900 block font-latin text-xs sm:text-sm break-all">
@@ -157,7 +157,7 @@ export const ThankYou: React.FC = () => {
 
                 <div className="sm:col-span-2 bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                   <span className="text-slate-500 font-medium flex items-center gap-1.5 text-[11px] sm:text-xs">
-                    <FiMapPin className="w-3.5 h-3.5 text-[#0068FF] shrink-0" />
+                    <FiMapPin className="w-3.5 h-3.5 text-[#0265FF] shrink-0" />
                     ডেলিভারি ঠিকানা:
                   </span>
                   <span className="font-semibold text-slate-900 block break-words text-xs sm:text-sm">
@@ -171,7 +171,7 @@ export const ThankYou: React.FC = () => {
             <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 space-y-2 text-xs sm:text-sm w-full box-border">
               <div className="flex justify-between items-center gap-2 text-slate-600">
                 <span>পণ্যের মূল্য:</span>
-                <span className="font-semibold text-slate-900 shrink-0">
+                <span className="font-semibold text-slate-900 shrink-0 font-number">
                   ৳{toBanglaNumber(subtotal)}
                 </span>
               </div>
@@ -180,10 +180,10 @@ export const ThankYou: React.FC = () => {
                   ডেলিভারি চার্জ (
                   {order?.deliveryArea === "outside"
                     ? "ঢাকার বাইরে"
-                    : "ঢাকা শহর"}
+                    : "ঢাকা ভেতরে"}
                   ):
                 </span>
-                <span className="font-semibold text-slate-900 shrink-0">
+                <span className="font-semibold text-slate-900 shrink-0 font-number">
                   ৳{toBanglaNumber(deliveryFee)}
                 </span>
               </div>
@@ -195,7 +195,7 @@ export const ThankYou: React.FC = () => {
               </div>
               <div className="border-t border-slate-200/80 pt-2.5 flex justify-between items-center gap-2 text-sm sm:text-base font-bold text-slate-900">
                 <span>সর্বমোট পরিশোধযোগ্য:</span>
-                <span className="text-lg sm:text-2xl font-extrabold text-[#0068FF] shrink-0">
+                <span className="text-lg sm:text-2xl font-extrabold text-[#0265FF] shrink-0 font-number">
                   ৳{toBanglaNumber(grandTotal)}
                 </span>
               </div>

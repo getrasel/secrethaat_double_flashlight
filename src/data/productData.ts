@@ -256,7 +256,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq5",
     question: "প্যাকেজে কী কী থাকছে?",
     answer:
-      "একটি 2-in-1 Rechargeable Double Light Torch & Lamp এবং একটি USB Charging Cable।",
+      "একটি ২-ইন-১ রিচার্জেবল ডাবল লাইট টর্চ ও ল্যাম্প এবং একটি USB Charging Cable।",
   },
 ];
 

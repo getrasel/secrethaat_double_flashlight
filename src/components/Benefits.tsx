@@ -7,105 +7,103 @@ import {
   FiBatteryCharging,
   FiHome,
 } from "react-icons/fi";
-import { PRODUCT_BENEFITS, PRODUCT_INFO } from "../data/productData";
-import shapeSpiral from "../assets/images/shape/1.png";
-import shapeSparkle from "../assets/images/shape/2.png";
+import { PRODUCT_BENEFITS } from "../data/productData";
 
 export const Benefits: React.FC = () => {
-  const getBenefitIcon = (iconName: string) => {
+  const getBenefitMeta = (iconName: string) => {
     switch (iconName) {
-      case "sparkles":
-        return {
-          icon: <FiSun className="w-7 h-7 text-[#D97706]" />,
-          bg: "bg-amber-50/90 text-[#D97706] border-amber-100",
-        };
       case "lamp":
         return {
-          icon: <FiSun className="w-7 h-7 text-[#0068FF]" />,
-          bg: "bg-blue-50/90 text-[#0068FF] border-blue-100",
-        };
-      case "zap":
-        return {
-          icon: <FiSliders className="w-7 h-7 text-[#4F46E5]" />,
-          bg: "bg-indigo-50/90 text-[#4F46E5] border-indigo-100",
+          icon: <FiSun className="w-6 h-6 text-[#0265FF]" />,
+          bg: "bg-blue-50 text-[#0265FF] border-blue-100",
+          accent: "from-blue-500/20 to-transparent",
         };
       case "multipurpose":
         return {
-          icon: <FiLayers className="w-7 h-7 text-[#0284C7]" />,
-          bg: "bg-sky-50/90 text-[#0284C7] border-sky-100",
+          icon: <FiLayers className="w-6 h-6 text-[#0284C7]" />,
+          bg: "bg-sky-50 text-[#0284C7] border-sky-100",
+          accent: "from-sky-500/20 to-transparent",
+        };
+      case "zap":
+        return {
+          icon: <FiSliders className="w-6 h-6 text-[#4F46E5]" />,
+          bg: "bg-indigo-50 text-[#4F46E5] border-indigo-100",
+          accent: "from-indigo-500/20 to-transparent",
+        };
+      case "sparkles":
+        return {
+          icon: <FiZap className="w-6 h-6 text-[#D97706]" />,
+          bg: "bg-amber-50 text-[#D97706] border-amber-100",
+          accent: "from-amber-500/20 to-transparent",
         };
       case "home":
         return {
-          icon: <FiHome className="w-7 h-7 text-[#06B6D4]" />,
-          bg: "bg-cyan-50/90 text-[#06B6D4] border-cyan-100",
+          icon: <FiHome className="w-6 h-6 text-[#0D9488]" />,
+          bg: "bg-teal-50 text-[#0D9488] border-teal-100",
+          accent: "from-teal-500/20 to-transparent",
         };
       case "battery":
         return {
-          icon: <FiBatteryCharging className="w-7 h-7 text-[#16A34A]" />,
-          bg: "bg-emerald-50/90 text-[#16A34A] border-emerald-100",
+          icon: <FiBatteryCharging className="w-6 h-6 text-[#16A34A]" />,
+          bg: "bg-emerald-50 text-[#16A34A] border-emerald-100",
+          accent: "from-emerald-500/20 to-transparent",
         };
       default:
         return {
-          icon: <FiZap className="w-7 h-7 text-[#0068FF]" />,
-          bg: "bg-blue-50/90 text-[#0068FF] border-blue-100",
+          icon: <FiZap className="w-6 h-6 text-[#0265FF]" />,
+          bg: "bg-blue-50 text-[#0265FF] border-blue-100",
+          accent: "from-blue-500/20 to-transparent",
         };
     }
   };
 
   return (
-    <section
-      id="benefits"
-      className="relative overflow-hidden py-16 md:py-24 bg-white border-y border-slate-100"
-    >
-      {/* Decorative Swimming Shape 1.png (Hidden on mobile, desktop only) */}
-      <div className="hidden sm:block absolute -top-10 -left-12 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-60 z-0">
-        <img
-          src={shapeSpiral}
-          alt=""
-          className="w-full h-full object-contain animate-[spin_110s_linear_infinite]"
-        />
-      </div>
-
-      <div className="absolute top-12 right-8 sm:right-20 w-12 sm:w-16 h-12 sm:h-16 pointer-events-none opacity-80 z-0">
-        <img
-          src={shapeSparkle}
-          alt=""
-          className="w-full h-full object-contain"
-        />
-      </div>
-
-      <div className="container-custom relative z-10">
+    <section id="benefits" className="py-14 sm:py-20 bg-white border-y border-slate-100">
+      <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-block text-sm font-bold uppercase tracking-wider text-[#0068FF] bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-4 sm:mb-5 shadow-2xs">
-            প্রধান সুবিধাসমূহ
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-            কেন এটি আপনার সেরা আলোর সঙ্গী?
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-xs sm:text-sm font-semibold text-[#0265FF] mb-3">
+            <span>প্রধান বৈশিষ্ট্যসমূহ</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+            কেন এই <span className="font-number">২-ইন-১</span> লাইট আপনার প্রয়োজন?
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-medium">
-            {PRODUCT_INFO.intro}
+          <p className="text-sm sm:text-base text-slate-600">
+            ঘরের জরুরি লোডশেডিং থেকে শুরু করে ক্যাম্পিং ও ভ্রমণ—সব পরিস্থিতিতে নির্ভরযোগ্য সঙ্গী।
           </p>
         </div>
 
-        {/* Benefits Grid with Unique Modern Icons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {PRODUCT_BENEFITS.map((benefit) => {
-            const iconData = getBenefitIcon(benefit.iconName);
+        {/* 6 Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {PRODUCT_BENEFITS.map((benefit, index) => {
+            const meta = getBenefitMeta(benefit.iconName);
+            const banglaStep = ["০১", "০২", "০৩", "০৪", "০৫", "০৬"][index] || "০১";
             return (
               <div
                 key={benefit.id}
-                className="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 card-hover flex flex-col justify-between group"
+                className="relative bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
               >
+                {/* Subtle top gradient glow on hover */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${meta.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                />
+
                 <div>
-                  {/* Modern Squircle Icon Container */}
-                  <div
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border shadow-2xs group-hover:scale-105 transition-transform duration-300 ${iconData.bg}`}
-                  >
-                    {iconData.icon}
+                  <div className="flex items-center justify-between mb-5">
+                    {/* Squircle Icon Container */}
+                    <div
+                      className={`w-12 h-12 rounded-2xl flex items-center justify-center border shadow-xs group-hover:scale-105 transition-transform duration-300 ${meta.bg}`}
+                    >
+                      {meta.icon}
+                    </div>
+
+                    {/* Numeric Step Badge */}
+                    <span className="text-xs font-bold text-slate-600 font-number px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200/70">
+                      {banglaStep}
+                    </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-2.5">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 leading-snug">
                     {benefit.title}
                   </h3>
 
@@ -121,3 +119,5 @@ export const Benefits: React.FC = () => {
     </section>
   );
 };
+
+export default Benefits;
