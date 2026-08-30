@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
-import { ThankYou } from './pages/ThankYou';
-import { NotFound } from './pages/NotFound';
-import { AdminLogin } from './pages/AdminLogin';
-import { AdminDashboard } from './pages/AdminDashboard';
+
+// Code-split secondary and admin pages for ultra-fast landing page performance
+const ThankYou = lazy(() => import('./pages/ThankYou'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+
+const PageLoader: React.FC = () => (
+  <div className="min-h-[50vh] flex items-center justify-center p-8">
+    <div className="w-8 h-8 rounded-full border-3 border-blue-600 border-t-transparent animate-spin" />
+  </div>
+);
 
 const AdminRoute: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
@@ -50,13 +58,15 @@ const AppContent: React.FC = () => {
 
   if (isAdminPath) {
     return (
-      <Routes>
-        <Route path="/login" element={<AdminLogin />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminRoute />} />
-        <Route path="/admin/orders" element={<AdminRoute />} />
-        <Route path="/orders" element={<AdminRoute />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/login" element={<AdminLogin />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminRoute />} />
+          <Route path="/admin/orders" element={<AdminRoute />} />
+          <Route path="/orders" element={<AdminRoute />} />
+        </Routes>
+      </Suspense>
     );
   }
 
@@ -64,12 +74,14 @@ const AppContent: React.FC = () => {
     <div className="min-h-screen bg-white text-slate-900 flex flex-col font-bangla antialiased selection:bg-[#0068FF] selection:text-white">
       {/* Dynamic Page Content */}
       <main className="flex-1 w-full">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/order-success" element={<ThankYou />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/order-success" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {/* Floating WhatsApp Button */}

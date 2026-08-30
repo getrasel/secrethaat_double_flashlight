@@ -51,7 +51,7 @@ export const Features: React.FC = () => {
 
   return (
     <section id="features" className="py-14 sm:py-20 bg-white border-b border-slate-100">
-      <div className="container-custom max-w-5xl mx-auto">
+      <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-xs sm:text-sm font-semibold text-[#0265FF] mb-3">

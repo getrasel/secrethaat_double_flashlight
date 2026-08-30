@@ -14,7 +14,7 @@ export const FinalCTA: React.FC = () => {
 
   return (
     <section className="py-14 sm:py-20 bg-slate-50 border-t border-slate-100">
-      <div className="container-narrow text-center">
+      <div className="container-custom text-center">
         {/* Modern Sapphire Blue Card */}
         <div className="bg-gradient-to-br from-[#0052CC] via-[#0265FF] to-[#0284C7] text-white rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl shadow-blue-500/15 space-y-5 sm:space-y-6 relative overflow-hidden">
           

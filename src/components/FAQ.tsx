@@ -11,7 +11,7 @@ export const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="py-14 sm:py-20 bg-white border-t border-slate-100">
-      <div className="container-narrow">
+      <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-xs sm:text-sm font-semibold text-[#0265FF] mb-3">
