@@ -34,7 +34,7 @@ export const Home: React.FC = () => {
       <FAQ />
 
       {/* 8. Footer Information */}
-      <Footer />
+      {/* <Footer /> */}
 
       {/* 9. Mobile Sticky Order Bar */}
       <MobileStickyOrderBar />
