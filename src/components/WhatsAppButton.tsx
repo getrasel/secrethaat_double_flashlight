@@ -13,7 +13,7 @@ export const WhatsAppButton: React.FC = () => {
   return (
     <aside
       aria-label="হোয়াটসঅ্যাপে যোগাযোগ"
-      className="fixed bottom-6 right-4 sm:right-6 z-40"
+      className="fixed bottom-[84px] md:bottom-6 right-4 sm:right-6 z-40 transition-all duration-300"
     >
       <a
         href={whatsappUrl}
