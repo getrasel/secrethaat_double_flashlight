@@ -6,7 +6,7 @@ import { Features } from "../components/Features";
 import { OrderSection } from "../components/OrderSection";
 import { FinalCTA } from "../components/FinalCTA";
 import { FAQ } from "../components/FAQ";
-import { Footer } from "../components/Footer";
+// import { Footer } from "../components/Footer";
 import { MobileStickyOrderBar } from "../components/MobileStickyOrderBar";
 
 export const Home: React.FC = () => {

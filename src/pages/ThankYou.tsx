@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import {
   FiCheckCircle,
@@ -44,6 +44,26 @@ export const ThankYou: React.FC = () => {
   const quantity = order?.quantity ?? 1;
   const unitPrice = PRODUCT_INFO.basePrice;
   const subtotal = state?.subtotal ?? unitPrice * quantity;
+
+  // Track Meta Pixel Purchase event on Thank You page
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("track", "Purchase", {
+        content_name: PRODUCT_INFO.name,
+        content_ids: ["double_flashlight"],
+        content_type: "product",
+        value: grandTotal,
+        currency: "BDT",
+        num_items: quantity,
+      });
+      console.log("[Meta Pixel] Purchase event tracked:", {
+        content_name: PRODUCT_INFO.name,
+        value: grandTotal,
+        currency: "BDT",
+        num_items: quantity,
+      });
+    }
+  }, [grandTotal, quantity]);
 
   // Find color variant details if available
   const variant =
