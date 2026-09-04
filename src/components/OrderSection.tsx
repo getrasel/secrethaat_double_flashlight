@@ -73,23 +73,39 @@ export const OrderSection: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
+    let firstErrorFieldId = "";
 
     if (!formData.name.trim()) {
       newErrors.name = "অনুগ্রহ করে আপনার নাম লিখুন";
+      if (!firstErrorFieldId) firstErrorFieldId = "customer-name";
     }
 
     const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
     if (!cleanPhone) {
       newErrors.phone = "অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন";
+      if (!firstErrorFieldId) firstErrorFieldId = "customer-phone";
     } else if (cleanPhone.length < 11) {
       newErrors.phone = "সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)";
+      if (!firstErrorFieldId) firstErrorFieldId = "customer-phone";
     }
 
     if (!formData.address.trim()) {
       newErrors.address = "অনুগ্রহ করে আপনার সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন";
+      if (!firstErrorFieldId) firstErrorFieldId = "customer-address";
     }
 
     setErrors(newErrors);
+
+    if (firstErrorFieldId) {
+      const el = document.getElementById(firstErrorFieldId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => {
+          el.focus();
+        }, 150);
+      }
+    }
+
     return Object.keys(newErrors).length === 0;
   };
 
@@ -201,7 +217,7 @@ export const OrderSection: React.FC = () => {
                       placeholder="যেমন: মোঃ সাকিব হাসান"
                       className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-slate-50/50 border text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0265FF] focus:bg-white transition-all ${
                         errors.name
-                          ? "border-red-500 ring-1 ring-red-500"
+                          ? "border-red-500 ring-2 ring-red-400/30 bg-red-50/30"
                           : "border-slate-200/90"
                       }`}
                     />
@@ -235,7 +251,7 @@ export const OrderSection: React.FC = () => {
                       placeholder="১১ ডিজিটের নম্বর (যেমন: 017XXXXXXXX)"
                       className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-slate-50/50 border text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0265FF] focus:bg-white transition-all ${
                         errors.phone
-                          ? "border-red-500 ring-1 ring-red-500"
+                          ? "border-red-500 ring-2 ring-red-400/30 bg-red-50/30"
                           : "border-slate-200/90"
                       }`}
                     />
@@ -269,7 +285,7 @@ export const OrderSection: React.FC = () => {
                       placeholder="জেলা, থানা, রোড নং ও বাসার নম্বর লিখুন"
                       className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-slate-50/50 border text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0265FF] focus:bg-white transition-all resize-none ${
                         errors.address
-                          ? "border-red-500 ring-1 ring-red-500"
+                          ? "border-red-500 ring-2 ring-red-400/30 bg-red-50/30"
                           : "border-slate-200/90"
                       }`}
                     />
